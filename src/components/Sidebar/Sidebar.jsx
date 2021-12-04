@@ -44,7 +44,7 @@ const useStyles = makeStyles({
 const Sidebar = () => {
   const classes = useStyles();
   return (
-    <Box>
+    <Box sx={{ zIndex: '-1' }}>
       <CssBaseline />
       <Drawer
         sx={{
@@ -84,7 +84,7 @@ const Sidebar = () => {
         <List>
           {['HOME', 'BILLING', 'ACCOUNT SETTING', 'HELP & FAQ'].map(
             (text, index) => (
-              <ListItem button key={text} className={classes.button} >
+              <ListItem button key={text} className={classes.button}>
                 <ListItemIcon sx={{ fontWeight: '700', color: '#32424E' }}>
                   {index === 1 ? (
                     <HomeOutlined />
@@ -111,7 +111,7 @@ const Sidebar = () => {
             <ListItemIcon>
               <PowerSettingsNewOutlined sx={{ color: '#32424E' }} />
             </ListItemIcon>
-            <Typography sx={{ fontWeight: '700', color: '#32424E' }}>
+            <Typography sx={{ fontWeight: '800', color: '#32424E' }}>
               LOG OUT
             </Typography>
           </ListItemButton>
