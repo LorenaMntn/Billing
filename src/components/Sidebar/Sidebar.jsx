@@ -1,14 +1,11 @@
 import {
   Box,
   CssBaseline,
-  AppBar,
-  Grid,
   Toolbar,
   Typography,
   Drawer,
   Divider,
   List,
-  Item,
   ListItemIcon,
   ListItemButton,
   ListItem,
@@ -25,7 +22,7 @@ import {
 import { makeStyles } from '@mui/styles';
 
 const sidebarWidth = 240;
-const toolbarHeight = 90;
+const toolbarHeight = 100;
 const useStyles = makeStyles({
   leftText: {
     textAlign: 'left',
@@ -36,17 +33,22 @@ const useStyles = makeStyles({
   boldText: {
     fontWeight: 'bold',
   },
+  button: {
+    '&.active': {
+      color: '#04819E',
+      background: '##F2F5F8',
+    },
+  },
 });
 
 const Sidebar = () => {
   const classes = useStyles();
   return (
-    <Box sx={{ p: 0 }}>
+    <Box>
       <CssBaseline />
       <Drawer
         sx={{
           width: sidebarWidth,
-
           '& .MuiDrawer-paper': {
             width: sidebarWidth,
             boxSizing: 'border-box',
@@ -60,12 +62,11 @@ const Sidebar = () => {
             height: toolbarHeight,
             background: '#014656',
             color: '#ffff',
-            paddingRight:0,
           }}
         >
-          <Stack>
+          <Stack sx={{ width: '100%' }}>
             <Typography
-              variant="h6"
+              variant="body1"
               className={classes.rightText}
               sx={{ pt: 1, fontWeight: 'bold' }}
             >
@@ -74,7 +75,7 @@ const Sidebar = () => {
             <Typography variant="h6" className={classes.boldText}>
               Alex Garcia
             </Typography>
-            <Typography variant="caption" sx={{ opacity: 0.8 }}>
+            <Typography variant="body2" sx={{ opacity: 0.8 }}>
               alex.garcia@gmail.com
             </Typography>
           </Stack>
@@ -83,7 +84,7 @@ const Sidebar = () => {
         <List>
           {['HOME', 'BILLING', 'ACCOUNT SETTING', 'HELP & FAQ'].map(
             (text, index) => (
-              <ListItem button key={text}>
+              <ListItem button key={text} className={classes.button} >
                 <ListItemIcon sx={{ fontWeight: '700', color: '#32424E' }}>
                   {index === 1 ? (
                     <HomeOutlined />
@@ -95,12 +96,26 @@ const Sidebar = () => {
                     <ContactSupportOutlined />
                   )}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText
+                  primary={text}
+                  disableTypography={true}
+                  sx={{ fontWeight: '700', color: '#32424E', paddingLeft: 0 }}
+                />
               </ListItem>
             )
           )}
         </List>
         <Divider />
+        <List>
+          <ListItemButton>
+            <ListItemIcon>
+              <PowerSettingsNewOutlined sx={{ color: '#32424E' }} />
+            </ListItemIcon>
+            <Typography sx={{ fontWeight: '700', color: '#32424E' }}>
+              LOG OUT
+            </Typography>
+          </ListItemButton>
+        </List>
       </Drawer>
     </Box>
   );
