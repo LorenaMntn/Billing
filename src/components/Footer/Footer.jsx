@@ -1,7 +1,5 @@
 import { Stack, Typography } from '@mui/material';
 
-const toolbarWidth = 44;
-
 const Footer = () => {
   return (
     <Stack
