@@ -22,7 +22,7 @@ import {
 import { makeStyles } from '@mui/styles';
 
 const sidebarWidth = 240;
-const toolbarHeight = 100;
+const siderbarHeight = 80;
 const useStyles = makeStyles({
   leftText: {
     textAlign: 'left',
@@ -33,25 +33,21 @@ const useStyles = makeStyles({
   boldText: {
     fontWeight: 'bold',
   },
-  button: {
-    '&.active': {
-      color: '#04819E',
-      background: '##F2F5F8',
-    },
-  },
 });
 
 const Sidebar = () => {
   const classes = useStyles();
   return (
-    <Box sx={{ zIndex: '-1' }}>
+    <Box>
       <CssBaseline />
       <Drawer
         sx={{
           width: sidebarWidth,
           '& .MuiDrawer-paper': {
             width: sidebarWidth,
+            height: 'calc(100% - 44px)',
             boxSizing: 'border-box',
+            boxShadow: '.1em 0 .5em -4px #888',
           },
         }}
         variant="permanent"
@@ -59,23 +55,22 @@ const Sidebar = () => {
       >
         <Toolbar
           sx={{
-            height: toolbarHeight,
+            height: siderbarHeight,
             background: '#014656',
             color: '#ffff',
           }}
         >
-          <Stack sx={{ width: '100%' }}>
+          <Stack sx={{ width: '100%', padding: '0' }}>
             <Typography
               variant="body1"
-              className={classes.rightText}
-              sx={{ pt: 1, fontWeight: 'bold' }}
+              sx={{ pt: 1, fontWeight: 'bold', ml: 'auto' }}
             >
               Viasat
             </Typography>
-            <Typography variant="h6" className={classes.boldText}>
+            <Typography variant="body1" className={classes.boldText}>
               Alex Garcia
             </Typography>
-            <Typography variant="body2" sx={{ opacity: 0.8 }}>
+            <Typography variant="body2" sx={{ pb: 1, opacity: 0.8 }}>
               alex.garcia@gmail.com
             </Typography>
           </Stack>
@@ -84,7 +79,7 @@ const Sidebar = () => {
         <List>
           {['HOME', 'BILLING', 'ACCOUNT SETTING', 'HELP & FAQ'].map(
             (text, index) => (
-              <ListItem button key={text} className={classes.button}>
+              <ListItem button key={text}>
                 <ListItemIcon sx={{ fontWeight: '700', color: '#32424E' }}>
                   {index === 1 ? (
                     <HomeOutlined />
@@ -96,7 +91,7 @@ const Sidebar = () => {
                     <ContactSupportOutlined />
                   )}
                 </ListItemIcon>
-                <ListItemText
+                <ListItemText 
                   primary={text}
                   disableTypography={true}
                   sx={{ fontWeight: '700', color: '#32424E', paddingLeft: 0 }}
