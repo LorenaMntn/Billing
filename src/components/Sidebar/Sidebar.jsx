@@ -81,9 +81,14 @@ const Sidebar = () => {
         <List>
           {['HOME', 'BILLING', 'ACCOUNT SETTING', 'HELP & FAQ'].map(
             (text, index) => (
-              <ListItem button key={text}>
+              <ListItem button key={text} sx={{ gap: '.5em' }}>
                 <ListItemIcon
-                  sx={{ fontWeight: '700', color: '#32424E', width: '0' }}
+                  sx={{
+                    flexBasis: '1.5em',
+                    minWidth: 'auto',
+                    fontWeight: '700',
+                    color: '#32424E',
+                  }}
                 >
                   {index === 1 ? (
                     <HomeOutlined />
@@ -106,8 +111,8 @@ const Sidebar = () => {
         </List>
         <Divider />
         <List>
-          <ListItemButton>
-            <ListItemIcon inset={false}>
+          <ListItemButton sx={{ gap: '.5em' }}>
+            <ListItemIcon sx={{ flexBasis: '1.5em', minWidth: 'auto' }}>
               <PowerSettingsNewOutlined sx={{ color: '#32424E' }} />
             </ListItemIcon>
             <ListItem sx={{ fontWeight: '700', color: '#32424E', p: '0' }}>
