@@ -10,8 +10,9 @@ const Header = () => {
     <Grid
       item
       container
+      variant="permanent"
       sx={{
-        width: 'calc(100% - 15em)',
+        width: '100%',
         height: '18.1em',
         background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         color: '#ffff',

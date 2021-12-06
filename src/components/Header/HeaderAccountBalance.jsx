@@ -22,7 +22,7 @@ const AccountBalance = () => {
           <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
             Account Balance
           </Typography>
-          <Typography variant="h3">174,97$</Typography>
+          <Typography variant="h3">174,97{'\u20AC'}</Typography>
         </Stack>
         <Typography
           variant="body2"
@@ -80,7 +80,7 @@ const AccountBalance = () => {
           >
             Overdue Balance
           </Typography>
-          <Typography sx={{ fontWeight: '600' }}>124,98$</Typography>
+          <Typography sx={{ fontWeight: '600' }}>124,98{'\u20AC'}</Typography>
         </Typography>
       </Container>
     </Stack>
