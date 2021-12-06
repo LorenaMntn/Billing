@@ -37,6 +37,7 @@ const useStyles = makeStyles({
 
 const Sidebar = () => {
   const classes = useStyles();
+
   return (
     <Box>
       <CssBaseline />
@@ -45,9 +46,10 @@ const Sidebar = () => {
           width: sidebarWidth,
           '& .MuiDrawer-paper': {
             width: sidebarWidth,
-            height: 'calc(100% - 44px)',
+            height: 'calc(100% - 45px)',
+            borderRight: '0',
             boxSizing: 'border-box',
-            boxShadow: '.1em 0 .5em -4px #888',
+            boxShadow: '.3em 0 .3em -.4em #888',
           },
         }}
         variant="permanent"
@@ -80,7 +82,9 @@ const Sidebar = () => {
           {['HOME', 'BILLING', 'ACCOUNT SETTING', 'HELP & FAQ'].map(
             (text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon sx={{ fontWeight: '700', color: '#32424E' }}>
+                <ListItemIcon
+                  sx={{ fontWeight: '700', color: '#32424E', width: '0' }}
+                >
                   {index === 1 ? (
                     <HomeOutlined />
                   ) : index === 2 ? (
@@ -91,10 +95,10 @@ const Sidebar = () => {
                     <ContactSupportOutlined />
                   )}
                 </ListItemIcon>
-                <ListItemText 
+                <ListItemText
                   primary={text}
                   disableTypography={true}
-                  sx={{ fontWeight: '700', color: '#32424E', paddingLeft: 0 }}
+                  sx={{ fontWeight: '700', color: '#32424E' }}
                 />
               </ListItem>
             )
@@ -103,12 +107,12 @@ const Sidebar = () => {
         <Divider />
         <List>
           <ListItemButton>
-            <ListItemIcon>
+            <ListItemIcon inset={false}>
               <PowerSettingsNewOutlined sx={{ color: '#32424E' }} />
             </ListItemIcon>
-            <Typography sx={{ fontWeight: '800', color: '#32424E' }}>
+            <ListItem sx={{ fontWeight: '700', color: '#32424E', p: '0' }}>
               LOG OUT
-            </Typography>
+            </ListItem>
           </ListItemButton>
         </List>
       </Drawer>
