@@ -1,14 +1,11 @@
-import { Grid, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import AccountBalance from './HeaderAccountBalance';
 
 const Header = () => {
   return (
     <Box
-      item
-      container
       sx={{
-        left: '240px',
         width: '100vw',
         height: '18.1em',
         background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
@@ -17,7 +14,6 @@ const Header = () => {
     >
       <Typography
         sx={{
-          width: '100vw',
           height: '3.1em',
           fontSize: '1.5em',
           fontWeight: '700',

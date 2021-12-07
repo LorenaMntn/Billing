@@ -40,10 +40,11 @@ const Sidebar = () => {
 
   return (
     <Box>
-      <CssBaseline />
       <Drawer
         sx={{
           width: sidebarWidth,
+          display: { xs: 'none', sm: 'none', md: ' block' },
+
           '& .MuiDrawer-paper': {
             width: sidebarWidth,
             height: 'calc(100% - 45px)',
@@ -87,6 +88,7 @@ const Sidebar = () => {
                 sx={{ gap: '.5em' }}
                 style={{
                   borderTop: text === 'LOG OUT' ? '1px solid #e3e3e3' : 'null',
+                  borderLeft: text === 'BILLING' ? '5px solid #04819E' : 'null',
                   backgroundColor: text === 'BILLING' ? '#F2F5F8' : 'null',
                 }}
               >
@@ -116,7 +118,9 @@ const Sidebar = () => {
                   primary={text}
                   disableTypography={true}
                   sx={{ fontWeight: '700', color: '#32424E' }}
-                  style={{ color: text === 'BILLING' ? '#04819E' : 'null' }}
+                  style={{
+                    color: text === 'BILLING' ? '#04819E' : 'null',
+                  }}
                 />
               </ListItem>
             )

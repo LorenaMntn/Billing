@@ -7,6 +7,7 @@ const Footer = () => {
       position="fixed"
       bottom="0"
       width="100%"
+      maxHeight="44px"
       sx={{ backgroundColor: '#FBFCFD', padding: '10px 0' }}
     >
       <Typography sx={{ p: '0 2.6em' }}>Blog</Typography>

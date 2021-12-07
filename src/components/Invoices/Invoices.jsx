@@ -13,7 +13,7 @@ const Invoices = () => {
         color: '#000',
       }}
     >
-      <Stack >
+      <Stack>
         <InvoiceCard />
         <InvoiceDetails />
       </Stack>

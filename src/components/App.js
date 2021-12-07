@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, CssBaseline } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Sidebar from './Sidebar/Sidebar';
 import Header from './Header/Header';
@@ -9,6 +9,7 @@ import Footer from './Footer/Footer';
 const App = () => {
   return (
     <Grid container>
+      <CssBaseline />
       <Grid item xs="auto">
         <Sidebar />
       </Grid>
