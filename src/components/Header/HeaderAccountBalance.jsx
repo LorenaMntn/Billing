@@ -1,5 +1,6 @@
 import {
   Container,
+  Box,
   Divider,
   Stack,
   Typography,
@@ -41,21 +42,15 @@ const AccountBalance = () => {
           background: 'rgba(204, 204, 204, 0.3)',
         }}
       >
-        <Typography
-          align="center"
-          sx={{ margin: '38px 11px 28px', color: '#fff', width: '164px' }}
-        >
+        <Box sx={{ margin: 'auto', color: '#fff', width: '164px' }}>
           <Typography>
             <HistoryOutlined />
           </Typography>
-          <Typography
-            variant="body1"
-            sx={{ color: 'white', fontWeight: '600' }}
-          >
+          <Typography variant="body1" sx={{ fontWeight: '600' }}>
             Overdue Balance
           </Typography>
           <Typography sx={{ fontWeight: '600' }}>124,98{'\u20AC'}</Typography>
-        </Typography>
+        </Box>
         <Divider
           orientation="vertical"
           textAlign="center"
@@ -63,21 +58,15 @@ const AccountBalance = () => {
           flexItem
           sx={{ margin: '38px 11px 28px', borderColor: '#fff' }}
         />
-        <Typography
-          align="center"
-          sx={{ margin: '38px 0 28px', color: '#fff', width: '164px' }}
-        >
+        <Box sx={{ margin: 'auto', color: '#fff', width: '164px' }}>
           <Typography>
             <CalendarTodayOutlined />
           </Typography>
-          <Typography
-            variant="body1"
-            sx={{ color: 'white', fontWeight: '600' }}
-          >
+          <Typography variant="body1" sx={{ fontWeight: '600' }}>
             Overdue Balance
           </Typography>
           <Typography sx={{ fontWeight: '600' }}>124,98{'\u20AC'}</Typography>
-        </Typography>
+        </Box>
       </Container>
     </Stack>
   );

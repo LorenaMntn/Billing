@@ -9,6 +9,7 @@ const Header = () => {
       container
       sx={{
         left: '240px',
+        width: '100vw',
         height: '18.1em',
         background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         color: '#ffff',

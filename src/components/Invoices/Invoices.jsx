@@ -9,7 +9,7 @@ const Invoices = () => {
       sx={{
         width: '100vw',
         height: '100vh',
-        backgroundColor: '#DEE4E8',
+        backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
