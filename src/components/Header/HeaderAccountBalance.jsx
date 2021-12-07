@@ -1,5 +1,4 @@
 import {
-  Grid,
   Container,
   Divider,
   Stack,
@@ -7,9 +6,6 @@ import {
   ListItemIcon,
 } from '@mui/material';
 import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
-import { flexbox } from '@mui/system';
-
-const accountWidth = 240;
 
 const AccountBalance = () => {
   return (

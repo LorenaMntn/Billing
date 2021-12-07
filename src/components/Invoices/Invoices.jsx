@@ -1,21 +1,23 @@
-import { Stack, Grid, Typography } from '@mui/material';
+import { Box, Stack, Container, Typography } from '@mui/material';
 import InvoiceCard from './InvoiceCard';
 import InvoiceDetails from './InvoiceDetails';
 
 const Invoices = () => {
   return (
-    <Grid
-      item
-      container
-      variant="permanent"
+    <Box
+      position="fixed"
       sx={{
+        width: '100vw',
         height: '100vh',
+        backgroundColor: '#DEE4E8',
         color: '#000',
       }}
     >
-      <InvoiceCard />
-      <InvoiceDetails />
-    </Grid>
+      <Stack >
+        <InvoiceCard />
+        <InvoiceDetails />
+      </Stack>
+    </Box>
   );
 };
 

@@ -8,8 +8,8 @@ import Footer from './Footer/Footer';
 
 const App = () => {
   return (
-    <Grid container sx={{ height: '100%' }}>
-      <Grid item xs={2}>
+    <Grid container>
+      <Grid item xs="auto">
         <Sidebar />
       </Grid>
       <Grid item xs={10}>

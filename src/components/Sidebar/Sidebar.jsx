@@ -79,9 +79,17 @@ const Sidebar = () => {
         </Toolbar>
         <Divider />
         <List>
-          {['HOME', 'BILLING', 'ACCOUNT SETTING', 'HELP & FAQ'].map(
+          {['HOME', 'BILLING', 'ACCOUNT SETTING', 'HELP & FAQ', 'LOG OUT'].map(
             (text, index) => (
-              <ListItem button key={text} sx={{ gap: '.5em' }}>
+              <ListItem
+                button
+                key={text}
+                sx={{ gap: '.5em' }}
+                style={{
+                  borderTop: text === 'LOG OUT' ? '1px solid #e3e3e3' : 'null',
+                  backgroundColor: text === 'BILLING' ? '#F2F5F8' : 'null',
+                }}
+              >
                 <ListItemIcon
                   sx={{
                     flexBasis: '1.5em',
@@ -90,10 +98,14 @@ const Sidebar = () => {
                     color: '#32424E',
                   }}
                 >
-                  {index === 1 ? (
+                  {index === 0 ? (
                     <HomeOutlined />
+                  ) : index === 1 ? (
+                    <AccountBalanceWalletOutlined
+                      style={{ color: '#04819E' }}
+                    />
                   ) : index === 2 ? (
-                    <AccountBalanceWalletOutlined />
+                    <AccountCircleOutlined />
                   ) : index === 3 ? (
                     <AccountCircleOutlined />
                   ) : (
@@ -104,21 +116,11 @@ const Sidebar = () => {
                   primary={text}
                   disableTypography={true}
                   sx={{ fontWeight: '700', color: '#32424E' }}
+                  style={{ color: text === 'BILLING' ? '#04819E' : 'null' }}
                 />
               </ListItem>
             )
           )}
-        </List>
-        <Divider />
-        <List>
-          <ListItemButton sx={{ gap: '.5em' }}>
-            <ListItemIcon sx={{ flexBasis: '1.5em', minWidth: 'auto' }}>
-              <PowerSettingsNewOutlined sx={{ color: '#32424E' }} />
-            </ListItemIcon>
-            <ListItem sx={{ fontWeight: '700', color: '#32424E', p: '0' }}>
-              LOG OUT
-            </ListItem>
-          </ListItemButton>
         </List>
       </Drawer>
     </Box>

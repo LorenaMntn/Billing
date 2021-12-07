@@ -1,18 +1,14 @@
-import { Grid, Stack, Typography } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import AccountBalance from './HeaderAccountBalance';
 
-const headerWidth = 240;
-const headerHeight = 300;
-
 const Header = () => {
   return (
-    <Grid
+    <Box
       item
       container
-      variant="permanent"
       sx={{
-        width: '100%',
+        left: '240px',
         height: '18.1em',
         background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         color: '#ffff',
@@ -20,7 +16,7 @@ const Header = () => {
     >
       <Typography
         sx={{
-          width: '100%',
+          width: '100vw',
           height: '3.1em',
           fontSize: '1.5em',
           fontWeight: '700',
@@ -30,7 +26,7 @@ const Header = () => {
         Billing
       </Typography>
       <AccountBalance />
-    </Grid>
+    </Box>
   );
 };
 
