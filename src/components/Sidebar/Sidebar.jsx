@@ -43,8 +43,7 @@ const Sidebar = () => {
       <Drawer
         sx={{
           width: sidebarWidth,
-          display: { xs: 'none', sm: 'none', md: ' block' },
-
+          display: { xs: 'none', lg: 'block' },
           '& .MuiDrawer-paper': {
             width: sidebarWidth,
             height: 'calc(100% - 45px)',
