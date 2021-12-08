@@ -11,10 +11,10 @@ import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
 const AccountBalance = () => {
   return (
     <Stack
-      sx={{ m: '0 auto', maxWidth: '50em', textAlign: 'center' }}
+      sx={{ ml: '11em', width: '41em', textAlign: 'center' }}
       direction="row"
     >
-      <Container>
+      <Container sx={{ width: '100%' }}>
         <Stack sx={{ width: '12em' }}>
           <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
             Account Balance
@@ -35,7 +35,8 @@ const AccountBalance = () => {
       </Container>
       <Container
         sx={{
-          pl: '7em',
+          ml: '150px',
+          width: '100%',
           height: '9.2em',
           display: 'flex',
           background: 'rgba(204, 204, 204, 0.3)',

@@ -2,24 +2,19 @@ import { Stack, Grid, Paper, Box, Typography } from '@mui/material';
 
 const InvoiceCard = () => {
   return (
-    <Box sx={{ ml: '10.6em', maxWidth: '50em' }}>
+    <Box sx={{ ml: '10.6em' }}>
       <Typography
         variant="subtitle1"
         sx={{
           p: '.5em 0 0 1em',
+          width: '41.3em',
           height: '3.1em',
           fontWeight: '700',
         }}
       >
         My Invoices
       </Typography>
-      <Paper
-        sx={{
-          width: '100%',
-          height: '6.5em',
-          boxShadow: '0 2px 2px -2px #888',
-        }}
-      >
+      <Paper elevation="1" sx={{ width: '661px', height: '104px' }}>
         <Grid container justifyContent="space-between">
           <Stack sx={{ margin: '6px 0 6px 16px' }}>
             <Typography variant="subtitle1" sx={{ opacity: '0.4' }}>
@@ -32,25 +27,25 @@ const InvoiceCard = () => {
               Due on 21/10/2021
             </Typography>
           </Stack>
-          <Stack sx={{ margin: '6px 0 6px 16px' }}>
+          <Stack>
             <Typography
-              variant="caption"
+              variant="subtitle1"
               sx={{
-                p: '0 8px',
+                p: '0 5px',
                 width: '75px',
-                m: 'auto',
+                mt: '6px',
+                opacity: '0.4',
                 borderRadius: '1em 0 0 1em',
-                backgroundColor: '#64CEFB',
-                color: '#fff',
-                fontWeight: '800',
+                backgroundColor: '#00a5eb',
+                color: 'white',
               }}
             >
-              ISSUED
+              Issued
             </Typography>
-            <Typography variant="h5" sx={{ fontWeight: '700' }}>
-              49,99{'\u20AC'}
+            <Typography gutterBottom variant="h6" sx={{ fontWeight: '400' }}>
+              49,9{'\u20AC'}
             </Typography>
-            <Typography variant="body2" sx={{ margin: 'auto', opacity: '0.7' }}>
+            <Typography variant="body2" sx={{ opacity: '0.7' }}>
               View
             </Typography>
           </Stack>
