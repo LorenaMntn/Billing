@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Grid, Container, CssBaseline } from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { Grid, Box, Container, CssBaseline } from '@mui/material';
 import Sidebar from './Sidebar/Sidebar';
 import Header from './Header/Header';
 import Invoices from './Invoices/Invoices';
@@ -10,14 +9,14 @@ const App = () => {
   return (
     <Grid container>
       <CssBaseline />
-      <Grid item xl={'auto'}>
+      <Grid item md={'auto'}>
         <Sidebar />
       </Grid>
-      <Grid item xl={10} sx={{ width: 'calc(100% - 240px)' }}>
+      <Grid item md={10} sx={{ width: 'calc(100% - 240px)' }}>
         <Header />
         <Invoices />
       </Grid>
-      <Grid item xl={12}>
+      <Grid item md={12}>
         <Footer />
       </Grid>
     </Grid>

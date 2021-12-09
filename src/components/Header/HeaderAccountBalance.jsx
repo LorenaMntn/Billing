@@ -7,24 +7,34 @@ import {
   ListItemIcon,
 } from '@mui/material';
 import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const AccountBalance = () => {
+  const theme = useTheme();
+  const mobileVersion = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Stack
-      sx={{ ml: '11em', width: '41em', textAlign: 'center' }}
+      sx={{
+        ml: '11em',
+        maxWidth: '45em',
+        textAlign: 'center',
+      }}
       direction="row"
+      spacing={8}
     >
-      <Container sx={{ width: '100%' }}>
+      <Container disableGutters={true}>
         <Stack sx={{ width: '12em' }}>
           <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
             Account Balance
           </Typography>
-          <Typography variant="h3">174,97{'\u20AC'}</Typography>
+          <Typography variant="h3" bottom>
+            174,97{'\u20AC'}
+          </Typography>
         </Stack>
         <Typography
           variant="body2"
           sx={{
-            margin: '2em 0 3.6em',
             width: '14em',
             wordWrap: 'break-word',
             textAlign: 'center',
@@ -34,8 +44,9 @@ const AccountBalance = () => {
         </Typography>
       </Container>
       <Container
+        disableGutters={true}
         sx={{
-          ml: '150px',
+          ml: '0',
           width: '100%',
           height: '9.2em',
           display: 'flex',

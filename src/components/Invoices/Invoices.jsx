@@ -7,13 +7,14 @@ const Invoices = () => {
     <Box
       position="fixed"
       sx={{
-        width: '100vw',
-        height: '100vh',
+        margin: '0 auto',
+        width: '100%',
+        minHeight: '55vh',
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
-      <Stack >
+      <Stack>
         <InvoiceCard />
         <InvoiceDetails />
       </Stack>
