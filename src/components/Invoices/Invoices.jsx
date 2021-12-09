@@ -5,11 +5,11 @@ import InvoiceDetails from './InvoiceDetails';
 const Invoices = () => {
   return (
     <Box
-      position="fixed"
+      item
+      container
       sx={{
-        margin: '0 auto',
-        width: '100%',
-        minHeight: '55vh',
+        width: '100vw',
+        minHeight: '100vh',
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}

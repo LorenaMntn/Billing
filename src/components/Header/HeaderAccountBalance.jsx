@@ -1,11 +1,4 @@
-import {
-  Container,
-  Box,
-  Divider,
-  Stack,
-  Typography,
-  ListItemIcon,
-} from '@mui/material';
+import { Container, Box, Divider, Stack, Typography } from '@mui/material';
 import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -16,15 +9,15 @@ const AccountBalance = () => {
   return (
     <Stack
       sx={{
-        ml: '11em',
+        margin: '0 auto',
         maxWidth: '45em',
         textAlign: 'center',
       }}
-      direction="row"
+      direction={{ xs: 'column', md: 'row' }}
       spacing={8}
     >
       <Container disableGutters={true}>
-        <Stack sx={{ width: '12em' }}>
+        <Stack sx={{ width: '12em', margin: '0 auto' }}>
           <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
             Account Balance
           </Typography>
@@ -35,6 +28,13 @@ const AccountBalance = () => {
         <Typography
           variant="body2"
           sx={{
+            display: {
+              xs: 'none',
+              md: 'block',
+            },
+            margin: '0 auto',
+            mt: '0',
+            pt: '2em',
             width: '14em',
             wordWrap: 'break-word',
             textAlign: 'center',
@@ -79,6 +79,19 @@ const AccountBalance = () => {
           <Typography sx={{ fontWeight: '600' }}>124,98{'\u20AC'}</Typography>
         </Box>
       </Container>
+      <Typography
+        variant="body2"
+        sx={{
+          display: {
+            xs: 'block',
+            md: 'none',
+          },
+          pb: '2em',
+          textAlign: 'center',
+        }}
+      >
+        Next invoice will be issued on 28/12/2910
+      </Typography>
     </Stack>
   );
 };

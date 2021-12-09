@@ -12,7 +12,7 @@ const App = () => {
       <Grid item md={'auto'}>
         <Sidebar />
       </Grid>
-      <Grid item md={10} sx={{ width: 'calc(100% - 240px)' }}>
+      <Grid item lg={{ width: 'calc(1280-240px)' }} sm={8}>
         <Header />
         <Invoices />
       </Grid>

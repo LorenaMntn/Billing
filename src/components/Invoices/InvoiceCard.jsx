@@ -2,7 +2,7 @@ import { Stack, Grid, Paper, Box, Typography } from '@mui/material';
 
 const InvoiceCard = () => {
   return (
-    <Box sx={{ ml: '10.6em', maxWidth: '45em' }}>
+    <Box sx={{ m: '0 auto', minWidth: '45em' }}>
       <Typography
         variant="subtitle1"
         sx={{
