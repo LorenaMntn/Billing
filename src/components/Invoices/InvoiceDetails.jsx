@@ -1,20 +1,25 @@
-import { Grid, Paper, Box, Typography, Container } from '@mui/material';
+import { Grid, Paper, Box, Typography, Divider } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import { Close } from '@mui/icons-material';
 
 const InvoiceDetails = () => {
+  const theme = useTheme();
+  const mobileVersion = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Grid
       sx={{
         mt: '3em',
         position: 'sticky',
         backgroundColor: '#fff',
+        display: { xs: 'none', md: 'block' },
       }}
     >
       <Paper
         sx={{
           p: '1em',
-          width: '100%',
-          heigth: '100%',
+          width: '20em',
+          minHeight: '20em',
         }}
       >
         <Typography
@@ -27,7 +32,7 @@ const InvoiceDetails = () => {
           }}
         >
           View invoice as PDF
-          <Close />
+          <Close sx={{ color: 'black' }} />
         </Typography>
 
         <Box display="flex" justifyContent="space-between" sx={{ mb: '2em' }}>
@@ -39,7 +44,7 @@ const InvoiceDetails = () => {
               000584758832
             </Typography>
           </Box>
-          <Box>
+          <Box textAlign="right">
             <Typography variant="caption" sx={{ opacity: '0.7' }}>
               Paid on
             </Typography>
@@ -50,7 +55,7 @@ const InvoiceDetails = () => {
         </Box>
 
         <Box>
-          <Box display="flex" justifyContent="space-between">
+          <Box display="flex" justifyContent="space-between" gutterBottom>
             <Typography gutterBottom variant="body1" sx={{ fontWeight: '700' }}>
               Plan details
             </Typography>
@@ -58,15 +63,23 @@ const InvoiceDetails = () => {
               Amount
             </Typography>
           </Box>
-          <Box display="flex" justifyContent="space-between">
-            <Typography gutterBottom variant="body1" sx={{ fontWeight: '700' }}>
-              Plan details
+          <Typography gutterBottom variant="body1" sx={{ fontWeight: '500' }}>
+            ILIMITADA 30
+          </Typography>
+          <Box gutterBottom display="flex" justifyContent="space-between">
+            <Typography gutterBottom variant="body2" sx={{ opacity: '0.7' }}>
+              21/09/2021 - 21/10/2020
             </Typography>
-            <Typography variant="h8"> Amount </Typography>
+            <Typography variant="body1"> 49.99{'\u20AC'} </Typography>
           </Box>
+          <Divider sx={{ m: '.5em 0' }} />
           <Box display="flex" justifyContent="space-between">
-            <Typography variant="h6">Sub Total</Typography>
-            <Typography variant="h6">123456</Typography>
+            <Typography variant="body1" sx={{ fontWeight: '700' }}>
+              Sub Total
+            </Typography>
+            <Typography variant="body1" sx={{ fontWeight: '700' }}>
+              123456
+            </Typography>
           </Box>
         </Box>
       </Paper>

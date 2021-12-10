@@ -16,7 +16,7 @@ const Invoices = () => {
     >
       <Stack direction="row" sx={{ m: '0 1.5em' }}>
         <InvoiceCard />
-        {/* <InvoiceDetails /> */}
+        <InvoiceDetails />
       </Stack>
     </Box>
   );

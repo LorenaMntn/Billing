@@ -6,7 +6,7 @@ const Footer = () => {
       direction="row"
       position="fixed"
       bottom="0"
-      width="100vw"
+      width="100%"
       maxHeight="44px"
       sx={{
         display: { xs: 'none', lg: 'flex' },

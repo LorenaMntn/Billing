@@ -10,7 +10,7 @@ const InvoiceCard = () => {
       sx={{
         m: {
           xs: '0 auto',
-          md: '0 10em 0 10em',
+          md: '0 2.5em 0 10em',
         },
       }}
     >
