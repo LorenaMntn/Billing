@@ -1,6 +1,5 @@
 import {
   Box,
-  CssBaseline,
   Toolbar,
   Typography,
   Drawer,
@@ -17,7 +16,6 @@ import {
   AccountBalanceWalletOutlined,
   AccountCircleOutlined,
   ContactSupportOutlined,
-  PowerSettingsNewOutlined,
 } from '@mui/icons-material';
 import { makeStyles } from '@mui/styles';
 

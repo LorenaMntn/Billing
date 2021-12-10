@@ -1,26 +1,37 @@
 import { Stack, Grid, Paper, Box, Typography } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const InvoiceCard = () => {
+  const theme = useTheme();
+  const mobileVersion = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <Box sx={{ m: '0 auto', minWidth: '45em' }}>
+    <Box
+      sx={{
+        m: {
+          xs: '0 auto',
+          md: '0 10em 0 10em',
+        },
+      }}
+    >
       <Typography
         variant="subtitle1"
         sx={{
           p: '.5em 0 0 1em',
           height: '3.1em',
           fontWeight: '700',
+          minWidth: `${mobileVersion ? '25em' : '40em'}`,
         }}
       >
         My Invoices
       </Typography>
       <Paper
         sx={{
-          width: '100%',
           height: '6.5em',
           boxShadow: '0 2px 2px -2px #888',
         }}
       >
-        <Grid container justifyContent="space-between">
+        <Grid container justifyContent="space-between" sx={{ width: '100%' }}>
           <Stack sx={{ margin: '6px 0 6px 16px' }}>
             <Typography variant="subtitle1" sx={{ opacity: '0.4' }}>
               Invoice

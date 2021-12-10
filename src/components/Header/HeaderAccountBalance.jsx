@@ -1,20 +1,19 @@
 import { Container, Box, Divider, Stack, Typography } from '@mui/material';
 import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 
 const AccountBalance = () => {
-  const theme = useTheme();
-  const mobileVersion = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Stack
       sx={{
-        margin: '0 auto',
+        m: {
+          xs: '0 auto',
+          md: '0 0 0 5em',
+        },
         maxWidth: '45em',
         textAlign: 'center',
       }}
       direction={{ xs: 'column', md: 'row' }}
-      spacing={8}
+      spacing={2}
     >
       <Container disableGutters={true}>
         <Stack sx={{ width: '12em', margin: '0 auto' }}>
@@ -46,7 +45,6 @@ const AccountBalance = () => {
       <Container
         disableGutters={true}
         sx={{
-          ml: '0',
           width: '100%',
           height: '9.2em',
           display: 'flex',

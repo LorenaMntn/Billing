@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Box, Container, CssBaseline } from '@mui/material';
+import { Grid, CssBaseline } from '@mui/material';
 import Sidebar from './Sidebar/Sidebar';
 import Header from './Header/Header';
 import Invoices from './Invoices/Invoices';
@@ -12,7 +12,7 @@ const App = () => {
       <Grid item md={'auto'}>
         <Sidebar />
       </Grid>
-      <Grid item lg={{ width: 'calc(1280-240px)' }} sm={8}>
+      <Grid item sx={{ width: { lg: 'calc(100vw - 240px)', sm: '2' } }}>
         <Header />
         <Invoices />
       </Grid>

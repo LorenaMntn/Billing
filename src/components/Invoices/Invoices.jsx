@@ -8,15 +8,15 @@ const Invoices = () => {
       item
       container
       sx={{
-        width: '100vw',
+        minWidth: '100vw',
         minHeight: '100vh',
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
-      <Stack>
+      <Stack direction="row" sx={{ m: '0 1.5em' }}>
         <InvoiceCard />
-        <InvoiceDetails />
+        {/* <InvoiceDetails /> */}
       </Stack>
     </Box>
   );

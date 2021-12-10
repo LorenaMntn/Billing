@@ -33,8 +33,9 @@ const Header = () => {
         </Typography>
         {mobileVersion ? <ContactSupport sx={{ marginLeft: 'auto' }} /> : ''}
       </Box>
-
-      <AccountBalance />
+      <Box sx={{ margin: '0 1.5em' }}>
+        <AccountBalance />
+      </Box>
     </Box>
   );
 };
