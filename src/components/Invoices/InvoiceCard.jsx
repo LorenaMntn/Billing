@@ -8,6 +8,7 @@ const statusColor = {
   OVERDUE: '#CF4520',
 };
 
+
 const InvoiceCard = ({ data }) => {
   const theme = useTheme();
   const mobileVersion = useMediaQuery(theme.breakpoints.down('md'));
@@ -66,7 +67,7 @@ const InvoiceCard = ({ data }) => {
                 sx={{
                   p: '0 8px',
                   width: '75px',
-                  m: '.5em auto ',
+                  m: '.5em auto',
                   borderRadius: '1em 0 0 1em',
                   backgroundColor: statusColor[number.status],
                   color: '#fff',

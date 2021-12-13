@@ -14,15 +14,18 @@ const Header = () => {
       container
       sx={{
         minWidth: '100vw',
-        minHeight: '18.1em',
-        background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
+        maxHeight: '18.1em',
         color: '#ffff',
       }}
     >
       <Box
         display="flex"
         alignItems="center"
-        sx={{ margin: '0 .9em' }}
+        sx={{
+          postion: 'sticky',
+          width: '100vw',
+          background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
+        }}
       >
         {mobileVersion ? <ArrowBack /> : ''}
         <Typography
@@ -37,7 +40,13 @@ const Header = () => {
         </Typography>
         {mobileVersion ? <ContactSupport sx={{ marginLeft: 'auto' }} /> : ''}
       </Box>
-      <Box sx={{ margin: '0 1.5em' }}>
+      <Box
+        sx={{
+          width: '100vw',
+          height: '100vh',
+          background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
+        }}
+      >
         <AccountBalance />
       </Box>
     </Box>

@@ -105,10 +105,11 @@ const Sidebar = () => {
                   ) : index === 3 ? (
                     <AccountCircleOutlined />
                   ) : (
-                    <ContactSupportOutlined />
+                    <ContactSupportOutlined  />
                   )}
                 </ListItemIcon>
                 <ListItemText
+                
                   primary={text}
                   disableTypography={true}
                   sx={{ fontWeight: '700', color: '#32424E' }}
