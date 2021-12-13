@@ -9,25 +9,25 @@ const statusColor = {
   OVERDUE: '#CF4520',
 };
 
-// const monthNames = [
-//   'January',
-//   'February',
-//   'March',
-//   'April',
-//   'May',
-//   'June',
-//   'July',
-//   'August',
-//   'September',
-//   'October',
-//   'November',
-//   'December',
-// ];
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 
-// const getMonth = (month) => {
-//   const date = new Date();
-//   return monthNames[date.getMonth()];
-// };
+const getMonth = (monthNames) => {
+  const date = new Date();
+  return monthNames[date.getMonth()];
+};
 
 const InvoiceCard = ({ data }) => {
   const theme = useTheme();
@@ -37,7 +37,7 @@ const InvoiceCard = ({ data }) => {
       sx={{
         m: {
           xs: '0 auto',
-          md: '0 2.5em 0 10em',
+          md: '0 2.5em 2.5em 10em',
         },
       }}
     >

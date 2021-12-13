@@ -10,11 +10,8 @@ const Header = () => {
   const mobileVersion = useMediaQuery(theme.breakpoints.down('lg'));
   return (
     <Box
-      item
-      container
       sx={{
         minWidth: '100vw',
-        maxHeight: '18.1em',
         color: '#ffff',
       }}
     >
@@ -22,8 +19,9 @@ const Header = () => {
         display="flex"
         alignItems="center"
         sx={{
-          postion: 'fixed',
-          height: '5em',
+          zIndex: '100',
+          position: 'fixed',
+          pb: '1.8em',
           width: '100vw',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
@@ -33,7 +31,7 @@ const Header = () => {
           sx={{
             fontSize: '1.5em',
             fontWeight: '700',
-            p: '.7em 0 0 .7em',
+            p: '.65em 0 0 .7em',
           }}
         >
           Billing
@@ -43,7 +41,7 @@ const Header = () => {
       <Box
         sx={{
           width: '100vw',
-          height: '100vh',
+          p: '5.35em 0 3em',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
       >
