@@ -9,13 +9,13 @@ const Invoices = ({ data }) => {
       container
       sx={{
         minWidth: '100vw',
-        minHeight: '100vh',
+        minHeight: 'calc(100vh-5em)',
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
       <Stack direction="row" sx={{ m: '0 1.5em' }}>
-        <InvoiceCard data={data}/>
+        <InvoiceCard data={data} />
         {/* <InvoiceDetails /> */}
       </Stack>
     </Box>

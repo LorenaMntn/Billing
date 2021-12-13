@@ -22,7 +22,8 @@ const Header = () => {
         display="flex"
         alignItems="center"
         sx={{
-          postion: 'sticky',
+          postion: 'fixed',
+          height: '5em',
           width: '100vw',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
@@ -30,7 +31,6 @@ const Header = () => {
         {mobileVersion ? <ArrowBack /> : ''}
         <Typography
           sx={{
-            height: '3.1em',
             fontSize: '1.5em',
             fontWeight: '700',
             p: '.7em 0 0 .7em',

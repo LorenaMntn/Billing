@@ -1,6 +1,7 @@
 import { Stack, Grid, Paper, Box, Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { MonitorHeart } from '@mui/icons-material';
 
 const statusColor = {
   ISSUED: '#64CEFB',
@@ -8,6 +9,25 @@ const statusColor = {
   OVERDUE: '#CF4520',
 };
 
+// const monthNames = [
+//   'January',
+//   'February',
+//   'March',
+//   'April',
+//   'May',
+//   'June',
+//   'July',
+//   'August',
+//   'September',
+//   'October',
+//   'November',
+//   'December',
+// ];
+
+// const getMonth = (month) => {
+//   const date = new Date();
+//   return monthNames[date.getMonth()];
+// };
 
 const InvoiceCard = ({ data }) => {
   const theme = useTheme();
@@ -55,7 +75,7 @@ const InvoiceCard = ({ data }) => {
                 Invoice {number.id}
               </Typography>
               <Typography gutterBottom variant="h6" sx={{ fontWeight: '700' }}>
-                Month
+                {number.due}
               </Typography>
               <Typography variant="subtitle1" sx={{ opacity: '0.7' }}>
                 Due on {number.due}
