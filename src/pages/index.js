@@ -1,5 +1,5 @@
 import App from '../components/App';
-import { Box, CssBaseline } from '@mui/material';
+import { Box } from '@mui/material';
 
 const Index = () => (
   <Box>

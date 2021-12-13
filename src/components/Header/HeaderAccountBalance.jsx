@@ -17,7 +17,7 @@ const AccountBalance = () => {
     >
       <Container disableGutters={true}>
         <Stack sx={{ width: '12em', margin: '0 auto' }}>
-          <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+          <Typography variant="body1" sx={{ fontWeight: '700' }}>
             Account Balance
           </Typography>
           <Typography variant="h3" bottom>
@@ -72,9 +72,9 @@ const AccountBalance = () => {
             <CalendarTodayOutlined />
           </Typography>
           <Typography variant="body1" sx={{ fontWeight: '600' }}>
-            Overdue Balance
+            Due on 21/10/2020
           </Typography>
-          <Typography sx={{ fontWeight: '600' }}>124,98{'\u20AC'}</Typography>
+          <Typography sx={{ fontWeight: '600' }}>49,99{'\u20AC'}</Typography>
         </Box>
       </Container>
       <Typography

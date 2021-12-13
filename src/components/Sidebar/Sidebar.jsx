@@ -28,9 +28,6 @@ const useStyles = makeStyles({
   rightText: {
     textAlign: 'right',
   },
-  boldText: {
-    fontWeight: 'bold',
-  },
 });
 
 const Sidebar = () => {
@@ -63,11 +60,11 @@ const Sidebar = () => {
           <Stack sx={{ width: '100%', padding: '0' }}>
             <Typography
               variant="body1"
-              sx={{ pt: 1, fontWeight: 'bold', ml: 'auto' }}
+              sx={{ pt: 1, fontWeight: '700', ml: 'auto' }}
             >
               Viasat
             </Typography>
-            <Typography variant="body1" className={classes.boldText}>
+            <Typography variant="body1" sx={{ fontWeight: '700' }}>
               Alex Garcia
             </Typography>
             <Typography variant="body2" sx={{ pb: 1, opacity: 0.8 }}>

@@ -2,7 +2,7 @@ import { Box, Stack, Container, Typography } from '@mui/material';
 import InvoiceCard from './InvoiceCard';
 import InvoiceDetails from './InvoiceDetails';
 
-const Invoices = () => {
+const Invoices = ({ data }) => {
   return (
     <Box
       item
@@ -15,8 +15,8 @@ const Invoices = () => {
       }}
     >
       <Stack direction="row" sx={{ m: '0 1.5em' }}>
-        <InvoiceCard />
-        <InvoiceDetails />
+        <InvoiceCard data={data}/>
+        {/* <InvoiceDetails /> */}
       </Stack>
     </Box>
   );

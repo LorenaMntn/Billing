@@ -19,7 +19,11 @@ const Header = () => {
         color: '#ffff',
       }}
     >
-      <Box display="flex" alignItems="center" sx={{ margin: '0 .9em' }}>
+      <Box
+        display="flex"
+        alignItems="center"
+        sx={{ margin: '0 .9em' }}
+      >
         {mobileVersion ? <ArrowBack /> : ''}
         <Typography
           sx={{

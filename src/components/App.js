@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useState } from 'react';
+import data from './InvoiceDetailsDatabase';
 import { Grid, CssBaseline } from '@mui/material';
 import Sidebar from './Sidebar/Sidebar';
 import Header from './Header/Header';
@@ -6,6 +8,8 @@ import Invoices from './Invoices/Invoices';
 import Footer from './Footer/Footer';
 
 const App = () => {
+  const [state, setState] = useState(data);
+
   return (
     <Grid container>
       <CssBaseline />
@@ -14,7 +18,7 @@ const App = () => {
       </Grid>
       <Grid item sx={{ width: { lg: 'calc(100vw - 240px)', sm: '2' } }}>
         <Header />
-        <Invoices />
+        <Invoices data={state} />
       </Grid>
       <Grid item md={12}>
         <Footer />
