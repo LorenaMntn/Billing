@@ -1,11 +1,9 @@
 import { Grid, Paper, Box, Typography, Divider } from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { Close } from '@mui/icons-material';
 
 const InvoiceDetails = () => {
   const theme = useTheme();
-  const mobileVersion = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Grid
       sx={{
@@ -19,7 +17,7 @@ const InvoiceDetails = () => {
         sx={{
           p: '1em',
           width: '20em',
-          minHeight: '20em',
+          minHeight: '22em',
         }}
       >
         <Typography

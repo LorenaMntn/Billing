@@ -20,7 +20,11 @@ const InvoiceCard = () => {
           p: '.5em 0 0 1em',
           height: '3.1em',
           fontWeight: '700',
-          minWidth: `${mobileVersion ? '25em' : '40em'}`,
+          minWidth: {
+            xs: '25em',
+            md: '35em',
+            md: '40em',
+          },
         }}
       >
         My Invoices
@@ -49,7 +53,7 @@ const InvoiceCard = () => {
               sx={{
                 p: '0 8px',
                 width: '75px',
-                m: 'auto',
+                m: '.5em auto ',
                 borderRadius: '1em 0 0 1em',
                 backgroundColor: '#64CEFB',
                 color: '#fff',
@@ -58,12 +62,14 @@ const InvoiceCard = () => {
             >
               ISSUED
             </Typography>
-            <Typography variant="h5" sx={{ fontWeight: '700' }}>
-              49,99{'\u20AC'}
-            </Typography>
-            <Typography variant="body2" sx={{ margin: 'auto', opacity: '0.7' }}>
-              View
-            </Typography>
+            <Box textAlign="right" sx={{ mr: '.5em' }}>
+              <Typography variant="h5" sx={{ fontWeight: '700' }}>
+                49,99{'\u20AC'}
+              </Typography>
+              <Typography variant="body2" sx={{ mt: '.5em', opacity: '0.7' }}>
+                View
+              </Typography>
+            </Box>
           </Stack>
         </Grid>
       </Paper>
