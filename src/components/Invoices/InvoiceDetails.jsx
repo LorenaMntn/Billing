@@ -2,22 +2,21 @@ import { Grid, Paper, Box, Typography, Divider } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Close } from '@mui/icons-material';
 
-const InvoiceDetails = () => {
+const InvoiceDetails = (props) => {
   const theme = useTheme();
   return (
     <Grid
       sx={{
         mt: '3em',
         position: 'sticky',
-        backgroundColor: '#fff',
         display: { xs: 'none', md: 'block' },
       }}
     >
       <Paper
         sx={{
           p: '1em',
-          width: '20em',
-          minHeight: '22em',
+          minWidth: '20em',
+          minHeight: '21em',
         }}
       >
         <Typography
@@ -39,7 +38,7 @@ const InvoiceDetails = () => {
               Invoice number
             </Typography>
             <Typography variant="body1" sx={{ color: '#32424e' }}>
-              000584758832
+              {props.id}
             </Typography>
           </Box>
           <Box textAlign="right">
@@ -47,7 +46,7 @@ const InvoiceDetails = () => {
               Paid on
             </Typography>
             <Typography variant="body1" sx={{ color: '#32424e' }}>
-              21/10/2020
+            {props.due}
             </Typography>
           </Box>
         </Box>
@@ -58,7 +57,7 @@ const InvoiceDetails = () => {
               Plan details
             </Typography>
             <Typography variant="body1" sx={{ fontWeight: '700' }}>
-              Amount
+            {props.amount}
             </Typography>
           </Box>
           <Typography gutterBottom variant="body1" sx={{ fontWeight: '500' }}>

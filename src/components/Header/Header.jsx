@@ -21,8 +21,8 @@ const Header = () => {
         sx={{
           zIndex: '100',
           position: 'fixed',
-          pb: '1.8em',
-          width: '100vw',
+          p: '.95em 0 1.8em ',
+          width: '100%',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
       >
@@ -31,7 +31,7 @@ const Header = () => {
           sx={{
             fontSize: '1.5em',
             fontWeight: '700',
-            p: '.65em 0 0 .7em',
+            p: '0 0 0 .7em',
           }}
         >
           Billing
@@ -40,7 +40,7 @@ const Header = () => {
       </Box>
       <Box
         sx={{
-          width: '100vw',
+          width: '100%',
           p: '5.35em 0 3em',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}

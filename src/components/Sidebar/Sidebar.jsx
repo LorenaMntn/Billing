@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 });
 
 const Sidebar = () => {
-  const classes = useStyles();
+const classes = useStyles();
 
   return (
     <Box>

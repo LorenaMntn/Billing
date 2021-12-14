@@ -1,5 +1,5 @@
 import { Box, Stack, Container, Typography } from '@mui/material';
-import InvoiceCard from './InvoiceCard';
+import InvoiceCardList from './InvoiceCardList';
 import InvoiceDetails from './InvoiceDetails';
 
 const Invoices = ({ data }) => {
@@ -9,14 +9,13 @@ const Invoices = ({ data }) => {
       container
       sx={{
         minWidth: '100vw',
-        minHeight: 'calc(100vh-5em)',
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
       <Stack direction="row" sx={{ m: '0 1.5em' }}>
-        <InvoiceCard data={data} />
-        {/* <InvoiceDetails /> */}
+        <InvoiceCardList data={data} />
+        <InvoiceDetails />
       </Stack>
     </Box>
   );

@@ -2,6 +2,7 @@ import { Button, CssBaseline, Box, Typography, Divider } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
 
 const Details = () => {
+  const router = useRouter();
   return (
     <Box sx={{ maxWidth: '900px' }}>
       <CssBaseline />
