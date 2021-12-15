@@ -1,4 +1,4 @@
-import { Grid, Paper, Box, Typography, Divider } from '@mui/material';
+import { Grid, Button, Paper, Box, Typography, Divider } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Close } from '@mui/icons-material';
 import { useState } from 'react';
@@ -29,13 +29,9 @@ const InvoiceDetails = (props, { onClose }) => {
           }}
         >
           View invoice as PDF
-          <Close
-            onClick={() => {
-              console.log('clicked');
-              onClose;
-            }}
-            sx={{ color: 'black', cursor: 'pointer' }}
-          />
+          <Button onClick={onClose}>
+            <Close sx={{ color: 'black', cursor: 'pointer' }} />
+          </Button>
         </Typography>
 
         <Box display="flex" justifyContent="space-between" sx={{ mb: '2em' }}>

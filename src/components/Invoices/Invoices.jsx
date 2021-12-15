@@ -9,7 +9,7 @@ const Invoices = ({ data }) => {
   const theme = useTheme();
   const desktopVersion = useMediaQuery(theme.breakpoints.down('lg'));
   let [displayDetails, setDisplayDetails] = useState(null);
-
+  console.log(displayDetails);
   return (
     <Box
       item
@@ -61,7 +61,7 @@ const Invoices = ({ data }) => {
             </Box>
           ))}
         </Box>
-        {displayDetails && !desktopVersion && (
+        {displayDetails && (
           <InvoiceDetails
             invoice={displayDetails}
             onClose={() => {
@@ -72,9 +72,7 @@ const Invoices = ({ data }) => {
             amount={displayDetails.amount}
             status={displayDetails.status}
             due={displayDetails.due}
-          >
-            {/* {console.log('details', displayDetails.invoice.id)} */}
-          </InvoiceDetails>
+          ></InvoiceDetails>
         )}
       </Stack>
     </Box>
