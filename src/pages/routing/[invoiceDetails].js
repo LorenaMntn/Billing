@@ -1,10 +1,11 @@
 import { Button, CssBaseline, Box, Typography, Divider } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
+import { useRouter } from 'next/router';
 
-const Details = () => {
+const Details = (props) => {
   const router = useRouter();
   return (
-    <Box sx={{ maxWidth: '900px' }}>
+    <Box sx={{ maxWidth: '600px' }}>
       <CssBaseline />
       <Box
         display="flex"
@@ -12,7 +13,7 @@ const Details = () => {
         color="#32424E"
         sx={{ mb: '.75em', p: '.5em' }}
       >
-        <ArrowBack />
+        <ArrowBack onClick={() => router.back()} />
         <Typography variant="h5" sx={{ fontWeight: '700', ml: '.75em' }}>
           October
         </Typography>
