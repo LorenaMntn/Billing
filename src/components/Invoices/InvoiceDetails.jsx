@@ -29,7 +29,13 @@ const InvoiceDetails = (props, { onClose }) => {
           }}
         >
           View invoice as PDF
-          <Close sx={{ color: 'black' }} onClick={onClose} />
+          <Close
+            onClick={() => {
+              console.log('clicked');
+              onClose;
+            }}
+            sx={{ color: 'black', cursor: 'pointer' }}
+          />
         </Typography>
 
         <Box display="flex" justifyContent="space-between" sx={{ mb: '2em' }}>

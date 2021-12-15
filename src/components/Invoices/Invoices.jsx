@@ -8,10 +8,7 @@ import { useState } from 'react';
 const Invoices = ({ data }) => {
   const theme = useTheme();
   const desktopVersion = useMediaQuery(theme.breakpoints.down('lg'));
-  let [displayDetails, setDisplayDetails] = useState({
-    border: 'none',
-    invoice: data[0],
-  });
+  let [displayDetails, setDisplayDetails] = useState(null);
 
   return (
     <Box
@@ -60,25 +57,23 @@ const Invoices = ({ data }) => {
                 due={number.due}
                 status={number.status}
                 amount={number.amount}
-              >
-                {console.log(number)}
-              </InvoiceCard>
+              ></InvoiceCard>
             </Box>
           ))}
         </Box>
         {displayDetails && !desktopVersion && (
           <InvoiceDetails
-            invoice={displayDetails.invoice}
+            invoice={displayDetails}
             onClose={() => {
               setDisplayDetails(null);
             }}
-            // key={displayDetails.invoice.id}
-            // id={displayDetails.invoice.id}
-            // amount={displayDetails.invoice.amount}
-            // status={displayDetails.invoice.status}
-            // due={displayDetails.invoice.due}
+            key={displayDetails.id}
+            id={displayDetails.id}
+            amount={displayDetails.amount}
+            status={displayDetails.status}
+            due={displayDetails.due}
           >
-            {console.log(displayDetails.invoice.id)}
+            {/* {console.log('details', displayDetails.invoice.id)} */}
           </InvoiceDetails>
         )}
       </Stack>
