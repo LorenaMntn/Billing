@@ -1,7 +1,7 @@
 import { Container, Box, Divider, Stack, Typography } from '@mui/material';
 import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
 
-const AccountBalance = () => {
+const AccountBalance = (props) => {
   return (
     <Stack
       sx={{

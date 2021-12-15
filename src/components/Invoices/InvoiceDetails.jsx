@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import { Close } from '@mui/icons-material';
 import { useState } from 'react';
 
-const InvoiceDetails = (props) => {
+const InvoiceDetails = (props, { onClose }) => {
   const theme = useTheme();
   return (
     <Grid
@@ -29,7 +29,7 @@ const InvoiceDetails = (props) => {
           }}
         >
           View invoice as PDF
-          <Close sx={{ color: 'black' }} />
+          <Close sx={{ color: 'black' }} onClick={onClose} />
         </Typography>
 
         <Box display="flex" justifyContent="space-between" sx={{ mb: '2em' }}>

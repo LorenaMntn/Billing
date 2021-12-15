@@ -2,13 +2,31 @@ import { Stack, Grid, Paper, Box, Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
+
 const statusColor = {
   ISSUED: '#64CEFB',
   PAID: '#7DBE00',
   OVERDUE: '#CF4520',
 };
 
+const month = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
 const InvoiceCard = (props) => {
+  const newDate = props.due.split('/');
+  const getMonth = month[newDate[1] - 1];
   return (
     <Grid>
       <Paper
@@ -28,7 +46,7 @@ const InvoiceCard = (props) => {
               Invoice {props.id}
             </Typography>
             <Typography gutterBottom variant="h6" sx={{ fontWeight: '700' }}>
-              {props.due}
+              {getMonth}
             </Typography>
             <Typography variant="subtitle1" sx={{ opacity: '0.7' }}>
               Due on {props.due}

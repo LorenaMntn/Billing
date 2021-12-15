@@ -9,10 +9,7 @@ const Invoices = ({ data }) => {
   const theme = useTheme();
   const desktopVersion = useMediaQuery(theme.breakpoints.down('lg'));
   let [displayDetails, setDisplayDetails] = useState({
-    status: true,
-    display: 'none',
     border: 'none',
-    backgroundColor: 'none',
     invoice: data[0],
   });
 
@@ -50,47 +47,38 @@ const Invoices = ({ data }) => {
           >
             My Invoices
           </Typography>
-          <Box>
-            {data.map((number) => (
+
+          {data.map((number) => (
+            <Box
+              onClick={() => {
+                setDisplayDetails(number);
+              }}
+              key={number.id}
+            >
               <InvoiceCard
-                onClick={() => {
-                  setDisplayDetails(
-                    !displayDetails.status
-                      ? {
-                          status: displayDetails.status,
-                          backgroundColor: 'red',
-                        }
-                      : {
-                          status: displayDetails.status,
-                          backgroundColor: 'blue',
-                        }
-                  );
-                }}
-                key={number.id}
                 id={number.id}
                 due={number.due}
                 status={number.status}
                 amount={number.amount}
-              ></InvoiceCard>
-            ))}
-          </Box>
+              >
+                {console.log(number)}
+              </InvoiceCard>
+            </Box>
+          ))}
         </Box>
-        {!displayDetails.display && !desktopVersion && (
+        {displayDetails && !desktopVersion && (
           <InvoiceDetails
-            onClick={() => {
-              setDisplayDetails({
-                status: !displayDetails.status,
-                invoice: displayDetails.invoice,
-                border: 'none',
-              });
+            invoice={displayDetails.invoice}
+            onClose={() => {
+              setDisplayDetails(null);
             }}
-            key={displayDetails.invoice.id}
-            id={displayDetails.invoice.id}
-            amount={displayDetails.invoice.amount}
-            status={displayDetails.invoice.status}
-            due={displayDetails.invoice.due}
+            // key={displayDetails.invoice.id}
+            // id={displayDetails.invoice.id}
+            // amount={displayDetails.invoice.amount}
+            // status={displayDetails.invoice.status}
+            // due={displayDetails.invoice.due}
           >
-            {/* {console.log(displayDetails.invoice)} */}
+            {console.log(displayDetails.invoice.id)}
           </InvoiceDetails>
         )}
       </Stack>

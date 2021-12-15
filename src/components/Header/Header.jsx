@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 
 import AccountBalance from './HeaderAccountBalance';
 
-const Header = () => {
+const Header = ({ data }) => {
   const theme = useTheme();
   const mobileVersion = useMediaQuery(theme.breakpoints.down('lg'));
   return (
@@ -45,7 +45,7 @@ const Header = () => {
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
       >
-        <AccountBalance />
+        <AccountBalance data={data} />
       </Box>
     </Box>
   );
