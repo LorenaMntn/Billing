@@ -6,7 +6,7 @@ const data = [
   { id: 4, due: '21/07/2021', status: 'PAID', amount: 49.99 },
   { id: 3, due: '21/06/2021', status: 'PAID', amount: 29.99 },
   { id: 2, due: '21/05/2021', status: 'PAID', amount: 34.89 },
-  { id: 1, due: '21/04/2021', status: 'PAID', amount: 12.99 },
+  { id: 1, due: '21/07/2021', status: 'PAID', amount: 12.99 },
 ];
 
 export default data;

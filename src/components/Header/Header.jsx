@@ -11,7 +11,11 @@ const Header = ({ data }) => {
   return (
     <Box
       sx={{
-        minWidth: '100vw',
+        marginInline: 'auto',
+        zIndex: '100',
+        position: {
+          xs: 'inherit',
+        },
         color: '#ffff',
       }}
     >
@@ -40,7 +44,7 @@ const Header = ({ data }) => {
       </Box>
       <Box
         sx={{
-          width: '100%',
+          marginInline: 'auto',
           p: '5.35em 0 3em',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}

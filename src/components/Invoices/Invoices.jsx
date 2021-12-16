@@ -4,38 +4,45 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import InvoiceCard from './InvoiceCard';
 import { useTheme } from '@mui/material/styles';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const Invoices = ({ data }) => {
+  const router = useRouter();
   const theme = useTheme();
-  const desktopVersion = useMediaQuery(theme.breakpoints.down('lg'));
-  let [displayDetails, setDisplayDetails] = useState(null);
-  console.log(displayDetails);
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
+  let [selectedInvoice, setSelectedInvoice] = useState('');
   return (
     <Box
       item
       container
       sx={{
-        minWidth: '100vw',
+        height: '100%',
+        marginInline: 'auto',
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
-      <Stack direction="row" sx={{ m: '0 1.5em' }}>
-        <Box
+      <Stack sx={{ m: '0 1em' }}>
+        <Container
+          disableGutters
           sx={{
+            marginInline: 'auto',
+            maxWidth: '1024px',
+            height: '20%',
             m: {
               xs: '0 auto',
-              md: '0 2em 2.5em 8em',
+              md: '0 auto',
             },
           }}
         >
           <Typography
             variant="subtitle1"
             sx={{
-              p: '.5em 0 0 1em',
+              pt: '.5em ',
               height: '3.1em',
               fontWeight: '700',
-              minWidth: {
+               minWidth: {
                 xs: '25em',
                 md: '35em',
                 lg: '42em',
@@ -44,36 +51,70 @@ const Invoices = ({ data }) => {
           >
             My Invoices
           </Typography>
-
-          {data.map((number) => (
-            <Box
-              onClick={() => {
-                setDisplayDetails(number);
-              }}
-              key={number.id}
-            >
-              <InvoiceCard
-                id={number.id}
-                due={number.due}
-                status={number.status}
-                amount={number.amount}
-              ></InvoiceCard>
-            </Box>
-          ))}
-        </Box>
-        {displayDetails && (
-          <InvoiceDetails
-            invoice={displayDetails}
-            onClose={() => {
-              setDisplayDetails(null);
+        </Container>
+        <Container
+          disableGutters
+          sx={{
+            display: 'flex',
+            maxWidth: '50vw',
+            gap: '1rem',
+            m: {
+              xs: '0 auto',
+            },
+          }}
+        >
+          <Box
+            sx={{
+              maxHeight: '75vh',
+              maxWidth: '70%',
+              flexGrow: '1',
+              overflow: {
+                sx: 'none',
+                lg: 'scroll',
+              },
+              p: '.2em',
             }}
-            key={displayDetails.id}
-            id={displayDetails.id}
-            amount={displayDetails.amount}
-            status={displayDetails.status}
-            due={displayDetails.due}
-          ></InvoiceDetails>
-        )}
+          >
+            {data.map((number) => (
+              <Box
+                onClick={() => {
+                  if (isDesktop) {
+                    setSelectedInvoice(number);
+                  } else {
+                    router.push(`/routing/invoiceDetails/?id=${number.id}`);
+                  }
+                }}
+                key={number.id}
+                selectedInvoice={number.id}
+              >
+                <InvoiceCard
+                  changeBorderColor={
+                    number.id === selectedInvoice.id && selectedInvoice
+                  }
+                  id={number.id}
+                  due={number.due}
+                  status={number.status}
+                  amount={number.amount}
+                ></InvoiceCard>
+              </Box>
+            ))}
+          </Box>
+          <Box>
+            {selectedInvoice && !isMobile && (
+              <InvoiceDetails
+                invoice={selectedInvoice}
+                onClose={() => {
+                  setSelectedInvoice('');
+                }}
+                key={selectedInvoice.id}
+                id={selectedInvoice.id}
+                amount={selectedInvoice.amount}
+                status={selectedInvoice.status}
+                due={selectedInvoice.due}
+              ></InvoiceDetails>
+            )}
+          </Box>
+        </Container>
       </Stack>
     </Box>
   );

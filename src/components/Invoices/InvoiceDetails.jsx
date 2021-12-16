@@ -3,19 +3,18 @@ import { useTheme } from '@mui/material/styles';
 import { Close } from '@mui/icons-material';
 import { useState } from 'react';
 
-const InvoiceDetails = (props, { onClose }) => {
-  const theme = useTheme();
+const InvoiceDetails = (props) => {
   return (
     <Grid
       sx={{
-        mt: '3em',
+        minWidth: '20em',
         position: 'sticky',
       }}
     >
       <Paper
         sx={{
           p: '1em',
-          minWidth: '20em',
+          maxWidth: '20em',
           minHeight: '21em',
         }}
       >
@@ -29,9 +28,10 @@ const InvoiceDetails = (props, { onClose }) => {
           }}
         >
           View invoice as PDF
-          <Button onClick={onClose}>
-            <Close sx={{ color: 'black', cursor: 'pointer' }} />
-          </Button>
+          <Close
+            onClick={props.onClose}
+            sx={{ color: 'black', cursor: 'pointer' }}
+          />
         </Typography>
 
         <Box display="flex" justifyContent="space-between" sx={{ mb: '2em' }}>
@@ -59,7 +59,7 @@ const InvoiceDetails = (props, { onClose }) => {
               Plan details
             </Typography>
             <Typography variant="body1" sx={{ fontWeight: '700' }}>
-              {props.amount}
+              Amount
             </Typography>
           </Box>
           <Typography gutterBottom variant="body1" sx={{ fontWeight: '500' }}>
@@ -69,7 +69,11 @@ const InvoiceDetails = (props, { onClose }) => {
             <Typography gutterBottom variant="body2" sx={{ opacity: '0.7' }}>
               21/09/2021 - 21/10/2020
             </Typography>
-            <Typography variant="body1"> 49.99{'\u20AC'} </Typography>
+            <Typography variant="body1">
+              {' '}
+              {props.amount}
+              {'\u20AC'}{' '}
+            </Typography>
           </Box>
           <Divider sx={{ m: '.5em 0' }} />
           <Box display="flex" justifyContent="space-between">
@@ -78,6 +82,7 @@ const InvoiceDetails = (props, { onClose }) => {
             </Typography>
             <Typography variant="body1" sx={{ fontWeight: '700' }}>
               {props.amount}
+              {'\u20AC'}
             </Typography>
           </Box>
         </Box>

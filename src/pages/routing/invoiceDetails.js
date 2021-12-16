@@ -1,17 +1,24 @@
 import { Button, CssBaseline, Box, Typography, Divider } from '@mui/material';
+import data from '../../components/InvoiceDetailsDatabase';
 import { ArrowBack } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 
 const Details = (props) => {
   const router = useRouter();
+
+  const invoice = data.filter(
+    (element) => element.id === Number(router.query.id)
+  )[0];
+
+  console.log(invoice);
   return (
-    <Box sx={{ maxWidth: '600px' }}>
+    <Box sx={{ maxWidth: '600px', m: '0 auto' }}>
       <CssBaseline />
       <Box
         display="flex"
         alignItems="center"
         color="#32424E"
-        sx={{ mb: '.75em', p: '.5em' }}
+        sx={{ p: '.5em' }}
       >
         <ArrowBack onClick={() => router.back()} />
         <Typography variant="h5" sx={{ fontWeight: '700', ml: '.75em' }}>
@@ -29,7 +36,7 @@ const Details = (props) => {
       >
         <Box sx={{ color: '#fff' }}>
           <Typography variant="caption">Invoice number</Typography>
-          <Typography variant="body1">000584758832</Typography>
+          <Typography variant="body1">{invoice.id}</Typography>
         </Box>
         <Box textAlign="right">
           <Typography variant="caption">Paid on</Typography>
