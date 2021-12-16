@@ -5,12 +5,9 @@ import { useRouter } from 'next/router';
 
 const Details = (props) => {
   const router = useRouter();
-
   const invoice = data.filter(
     (element) => element.id === Number(router.query.id)
   )[0];
-
-  console.log(invoice);
   return (
     <Box sx={{ maxWidth: '600px', m: '0 auto' }}>
       <CssBaseline />

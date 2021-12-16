@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 const Invoices = ({ data }) => {
+  
   const router = useRouter();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
@@ -17,32 +18,33 @@ const Invoices = ({ data }) => {
       item
       container
       sx={{
+        position: {
+          xs: 'inherit',
+          md: 'fixed',
+        },
         height: '100%',
-        marginInline: 'auto',
+        minWidth: '100vw',
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
       <Stack sx={{ m: '0 1em' }}>
         <Container
-          disableGutters
           sx={{
-            marginInline: 'auto',
-            maxWidth: '1024px',
             height: '20%',
             m: {
               xs: '0 auto',
-              md: '0 auto',
+              md: '0 0 0 9em',
             },
           }}
         >
           <Typography
             variant="subtitle1"
             sx={{
-              pt: '.5em ',
+              p: '.5em 0 0 1em',
               height: '3.1em',
               fontWeight: '700',
-               minWidth: {
+              minWidth: {
                 xs: '25em',
                 md: '35em',
                 lg: '42em',
@@ -56,23 +58,24 @@ const Invoices = ({ data }) => {
           disableGutters
           sx={{
             display: 'flex',
-            maxWidth: '50vw',
-            gap: '1rem',
+            gap: '1em',
             m: {
               xs: '0 auto',
+              md: '0 0 0 10em',
             },
           }}
         >
           <Box
             sx={{
               maxHeight: '75vh',
-              maxWidth: '70%',
-              flexGrow: '1',
+              minWidth: '60vw',
+
               overflow: {
                 sx: 'none',
                 lg: 'scroll',
               },
               p: '.2em',
+              m: '0',
             }}
           >
             {data.map((number) => (

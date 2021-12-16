@@ -9,7 +9,6 @@ import Footer from './Footer/Footer';
 
 const App = () => {
   const [state, setState] = useState(data);
-
   return (
     <Grid container>
       <CssBaseline />
@@ -26,7 +25,7 @@ const App = () => {
           },
         }}
       >
-        <Header data={state} sx={{ backgroundColor: 'red' }} />
+        <Header data={state} />
         <Invoices
           height="240px"
           data={state}

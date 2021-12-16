@@ -2,7 +2,6 @@ import { Grid, Box, Typography } from '@mui/material';
 import { ArrowBack, ContactSupport } from '@mui/icons-material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-
 import AccountBalance from './HeaderAccountBalance';
 
 const Header = ({ data }) => {
@@ -11,11 +10,7 @@ const Header = ({ data }) => {
   return (
     <Box
       sx={{
-        marginInline: 'auto',
-        zIndex: '100',
-        position: {
-          xs: 'inherit',
-        },
+        maxWidth: '100vw',
         color: '#ffff',
       }}
     >
@@ -25,14 +20,15 @@ const Header = ({ data }) => {
         sx={{
           zIndex: '100',
           position: 'fixed',
-          p: '.95em 0 1.8em ',
-          width: '100%',
+          pb: '2.75em',
+          width: '100vw',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
       >
         {mobileVersion ? <ArrowBack /> : ''}
         <Typography
           sx={{
+            textAlign: 'center',
             fontSize: '1.5em',
             fontWeight: '700',
             p: '0 0 0 .7em',
@@ -44,7 +40,7 @@ const Header = ({ data }) => {
       </Box>
       <Box
         sx={{
-          marginInline: 'auto',
+          width: '100vw',
           p: '5.35em 0 3em',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
