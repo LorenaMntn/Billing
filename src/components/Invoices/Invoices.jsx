@@ -17,29 +17,30 @@ const Invoices = ({ data }) => {
       item
       container
       sx={{
+        position: {
+          xs: 'inherit',
+          md: 'fixed',
+        },
         height: '100%',
-
+        minWidth: '100vw',
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
       <Stack sx={{ m: '0 1em' }}>
         <Container
-          disableGutters
           sx={{
-            marginInline: 'auto',
             height: '20%',
-            width: '100vh',
             m: {
               xs: '0 auto',
-              md: '0 auto',
+              md: '0 0 0 9em',
             },
           }}
         >
           <Typography
             variant="subtitle1"
             sx={{
-              pt: '.5em ',
+              p: '.5em 0 0 1em',
               height: '3.1em',
               fontWeight: '700',
               minWidth: {
@@ -56,7 +57,7 @@ const Invoices = ({ data }) => {
           disableGutters
           sx={{
             display: 'flex',
-            gap: '1rem',
+            gap: '1em',
             m: {
               xs: '0 auto',
             },
@@ -65,7 +66,8 @@ const Invoices = ({ data }) => {
           <Box
             sx={{
               maxHeight: '75vh',
-              minWidth: '60vw',
+              maxWidth: '70%',
+              flexGrow: '1',
               overflow: {
                 sx: 'none',
                 lg: 'scroll',
@@ -97,6 +99,7 @@ const Invoices = ({ data }) => {
               </Box>
             ))}
           </Box>
+
           <Box>
             {selectedInvoice && !isMobile && (
               <InvoiceDetails
