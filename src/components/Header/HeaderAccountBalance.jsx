@@ -2,18 +2,30 @@ import { Container, Box, Divider, Stack, Typography } from '@mui/material';
 import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
 
 const AccountBalance = (props) => {
+  const filterAccountBalance = props.data.filter(
+    (element) =>
+      element.status === 'ISSUED' ||
+      element.status === 'OVERDUE' ||
+      !element.status.length === ''
+  );
+  const filterOverdueBalance = props.data.filter(
+    (element) => element.status === 'OVERDUE'
+  );
+  const acountBalance = filterAccountBalance.reduce(
+    (prev, curr) => curr.amount + prev.amount
+  );
+
   return (
     <Stack
       sx={{
         m: {
           xs: '0 auto',
-          md: '0 0 0 5em',
+          md: '0 auto',
         },
         maxWidth: '45em',
         textAlign: 'center',
       }}
       direction={{ xs: 'column', md: 'row' }}
-      spacing={2}
     >
       <Container disableGutters={true}>
         <Stack sx={{ width: '12em', margin: '0 auto' }}>
@@ -21,7 +33,8 @@ const AccountBalance = (props) => {
             Account Balance
           </Typography>
           <Typography variant="h3" bottom>
-            174,97{'\u20AC'}
+            {acountBalance}
+            {'\u20AC'}
           </Typography>
         </Stack>
         <Typography
@@ -58,7 +71,7 @@ const AccountBalance = (props) => {
           <Typography variant="body1" sx={{ fontWeight: '600' }}>
             Overdue Balance
           </Typography>
-          <Typography sx={{ fontWeight: '600' }}>124,98{'\u20AC'}</Typography>
+          <Typography sx={{ fontWeight: '600' }}>x{'\u20AC'}</Typography>
         </Box>
         <Divider
           orientation="vertical"
