@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 const Invoices = ({ data }) => {
-  
   const router = useRouter();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
@@ -18,30 +17,29 @@ const Invoices = ({ data }) => {
       item
       container
       sx={{
-        position: {
-          xs: 'inherit',
-          md: 'fixed',
-        },
         height: '100%',
-        minWidth: '100vw',
+
         backgroundColor: '#F2F5F8',
         color: '#000',
       }}
     >
       <Stack sx={{ m: '0 1em' }}>
         <Container
+          disableGutters
           sx={{
+            marginInline: 'auto',
             height: '20%',
+            width: '100vh',
             m: {
               xs: '0 auto',
-              md: '0 0 0 9em',
+              md: '0 auto',
             },
           }}
         >
           <Typography
             variant="subtitle1"
             sx={{
-              p: '.5em 0 0 1em',
+              pt: '.5em ',
               height: '3.1em',
               fontWeight: '700',
               minWidth: {
@@ -58,10 +56,9 @@ const Invoices = ({ data }) => {
           disableGutters
           sx={{
             display: 'flex',
-            gap: '1em',
+            gap: '1rem',
             m: {
               xs: '0 auto',
-              md: '0 0 0 10em',
             },
           }}
         >
@@ -69,13 +66,11 @@ const Invoices = ({ data }) => {
             sx={{
               maxHeight: '75vh',
               minWidth: '60vw',
-
               overflow: {
                 sx: 'none',
                 lg: 'scroll',
               },
               p: '.2em',
-              m: '0',
             }}
           >
             {data.map((number) => (
