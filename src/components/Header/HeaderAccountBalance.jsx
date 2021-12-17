@@ -3,22 +3,27 @@ import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
 
 const AccountBalance = (props) => {
   const filterAccountBalance = () => {
-    return props.data
-      .map((element) => {
-        return element.status === 'ISSUED' || element.status === 'OVERDUE'
-          ? element.amount
-          : 0;
-      })
-      .reduce((prev, current) => current + prev, 0);
+    return props.data.reduce((prev, current) => {
+      return current.status === 'ISSUED' || current.status === 'OVERDUE'
+        ? prev + current.amount
+        : prev;
+    }, 0);
   };
 
   const invoiceOverdue = () => {
-    return props.data
-      .map((element) => {
-        return element.status === 'OVERDUE' ? element.amount : 0;
-      })
-      .reduce((prev, current) => current + prev, 0);
+    return props.data.reduce((prev, current) => {
+      return current.status === 'OVERDUE' ? prev + current.amount : prev;
+    }, 0);
   };
+
+  const calculateDate = () => {
+    return props.data.filter((element) => {
+      return element.status.includes('ISSUED') ? element : '';
+    })[0].due;
+  };
+  const getInvoice = calculateDate().split('/');
+  const newNextInvoice =
+    getInvoice[0] + '/' + (Number(getInvoice[1]) + 1) + '/' + getInvoice[2];
 
   return (
     <Stack
@@ -58,7 +63,7 @@ const AccountBalance = (props) => {
             textAlign: 'center',
           }}
         >
-          Next invoice will be issued on {props.data[0].due}
+          Next invoice will be issued on {newNextInvoice}
         </Typography>
       </Container>
       <Container
@@ -94,9 +99,12 @@ const AccountBalance = (props) => {
             <CalendarTodayOutlined />
           </Typography>
           <Typography variant="body1" sx={{ fontWeight: '600' }}>
-            Due on 21/10/2020
+            Due on {getInvoice.join('/')}
           </Typography>
-          <Typography sx={{ fontWeight: '600' }}>49,99{'\u20AC'}</Typography>
+          <Typography sx={{ fontWeight: '600' }}>
+            63.99
+            {'\u20AC'}
+          </Typography>
         </Box>
       </Container>
       <Typography

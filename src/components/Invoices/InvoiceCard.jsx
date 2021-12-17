@@ -49,7 +49,12 @@ const InvoiceCard = (props) => {
             {getMonth}
           </Typography>
           <Typography variant="subtitle1" sx={{ opacity: '0.7' }}>
-            Due on {props.due}
+            {props.status === 'OVERDUE'
+              ? `Was due on`
+              : props.status === 'PAID'
+              ? `Paid on`
+              : `Due on`}{' '}
+            {props.due}
           </Typography>
         </Stack>
         <Stack sx={{ margin: '6px 0 6px 16px' }}>

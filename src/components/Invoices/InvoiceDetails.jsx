@@ -45,7 +45,11 @@ const InvoiceDetails = (props) => {
           </Box>
           <Box textAlign="right">
             <Typography variant="caption" sx={{ opacity: '0.7' }}>
-              Paid on
+              {props.status === 'OVERDUE'
+              ? `Was due on`
+              : props.status === 'PAID'
+              ? `Paid on`
+              : `Due on`}{' '}
             </Typography>
             <Typography variant="body1" sx={{ color: '#32424e' }}>
               {props.due}
