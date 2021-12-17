@@ -1,6 +1,7 @@
 const data = [
+  { id: 9, due: '21/12/2021', status: 'OVERDUE', amount: 92.99 },
   { id: 8, due: '21/11/2021', status: 'ISSUED', amount: 63.99 },
-  { id: 7, due: '21/10/2021', status: 'OVERDUE', amount: 63.99 },
+  { id: 7, due: '21/10/2021', status: 'OVERDUE', amount: 52.99 },
   { id: 6, due: '21/09/2021', status: 'PAID', amount: 53.99 },
   { id: 5, due: '21/08/2021', status: 'PAID', amount: 69.99 },
   { id: 4, due: '21/07/2021', status: 'PAID', amount: 49.99 },

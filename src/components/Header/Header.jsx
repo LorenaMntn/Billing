@@ -18,6 +18,7 @@ const Header = ({ data }) => {
         display="flex"
         alignItems="center"
         sx={{
+          
           zIndex: '100',
           position: 'fixed',
           pb: '2.75em',

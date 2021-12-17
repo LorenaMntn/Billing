@@ -2,27 +2,33 @@ import { Container, Box, Divider, Stack, Typography } from '@mui/material';
 import { HistoryOutlined, CalendarTodayOutlined } from '@mui/icons-material';
 
 const AccountBalance = (props) => {
-  const filterAccountBalance = props.data.filter(
-    (element) =>
-      element.status === 'ISSUED' ||
-      element.status === 'OVERDUE' ||
-      !element.status.length === ''
-  );
-  const filterOverdueBalance = props.data.filter(
-    (element) => element.status === 'OVERDUE'
-  );
-  const acountBalance = filterAccountBalance.reduce(
-    (prev, curr) => curr.amount + prev.amount
-  );
+  const filterAccountBalance = () => {
+    return props.data
+      .map((element) => {
+        return element.status === 'ISSUED' || element.status === 'OVERDUE'
+          ? element.amount
+          : 0;
+      })
+      .reduce((prev, current) => current + prev, 0);
+  };
+
+  const invoiceOverdue = () => {
+    return props.data
+      .map((element) => {
+        return element.status === 'OVERDUE' ? element.amount : 0;
+      })
+      .reduce((prev, current) => current + prev, 0);
+  };
 
   return (
     <Stack
       sx={{
         m: {
           xs: '0 auto',
-          md: '0 auto',
+          md: '0 0 0 5em',
+          lg: '0 0 0 2em',
         },
-        maxWidth: '45em',
+        maxWidth: '70%',
         textAlign: 'center',
       }}
       direction={{ xs: 'column', md: 'row' }}
@@ -33,7 +39,7 @@ const AccountBalance = (props) => {
             Account Balance
           </Typography>
           <Typography variant="h3" bottom>
-            {acountBalance}
+            {filterAccountBalance()}
             {'\u20AC'}
           </Typography>
         </Stack>
@@ -52,7 +58,7 @@ const AccountBalance = (props) => {
             textAlign: 'center',
           }}
         >
-          Next invoice will be issued on 28/12/2910
+          Next invoice will be issued on {props.data[0].due}
         </Typography>
       </Container>
       <Container
@@ -71,7 +77,10 @@ const AccountBalance = (props) => {
           <Typography variant="body1" sx={{ fontWeight: '600' }}>
             Overdue Balance
           </Typography>
-          <Typography sx={{ fontWeight: '600' }}>x{'\u20AC'}</Typography>
+          <Typography sx={{ fontWeight: '600' }}>
+            {invoiceOverdue()}
+            {'\u20AC'}
+          </Typography>
         </Box>
         <Divider
           orientation="vertical"
@@ -101,7 +110,7 @@ const AccountBalance = (props) => {
           textAlign: 'center',
         }}
       >
-        Next invoice will be issued on 28/12/2910
+        Next invoice will be issued on
       </Typography>
     </Stack>
   );
