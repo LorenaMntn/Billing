@@ -45,7 +45,7 @@ const Header = ({ data }) => {
       <Box
         sx={{
           width: '100vw',
-          p: '5.35em 0 2.1em',
+          p: '5em 0 2.6em',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
       >

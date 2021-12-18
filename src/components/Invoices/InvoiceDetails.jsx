@@ -7,15 +7,16 @@ const InvoiceDetails = (props) => {
   return (
     <Grid
       sx={{
-        minWidth: '20rem',
+        mt: '4em',
+        maxWidth: '100%',
         position: 'sticky',
       }}
     >
       <Paper
         sx={{
           p: '1em',
-          maxWidth: '20em',
-          minHeight: '23em',
+          minWidth: '20rem',
+          minHeight: '23rem',
         }}
       >
         <Typography
@@ -24,7 +25,7 @@ const InvoiceDetails = (props) => {
             display: 'flex',
             justifyContent: 'space-between',
             color: '#0AA5AB',
-            fontWeight: '700',
+            fontWeight: '600',
           }}
         >
           View invoice as PDF
@@ -59,10 +60,10 @@ const InvoiceDetails = (props) => {
 
         <Box>
           <Box display="flex" justifyContent="space-between" gutterBottom>
-            <Typography gutterBottom variant="body1" sx={{ fontWeight: '700' }}>
+            <Typography gutterBottom variant="body1" sx={{ fontWeight: '600' }}>
               Plan details
             </Typography>
-            <Typography variant="body1" sx={{ fontWeight: '700' }}>
+            <Typography variant="body1" sx={{ fontWeight: '600' }}>
               Amount
             </Typography>
           </Box>
@@ -85,16 +86,16 @@ const InvoiceDetails = (props) => {
             justifyContent="space-between"
             sx={{ mb: '1.5em' }}
           >
-            <Typography variant="body1" sx={{ fontWeight: '700' }}>
+            <Typography variant="body1" sx={{ fontWeight: '600' }}>
               Sub Total
             </Typography>
-            <Typography variant="body1" sx={{ fontWeight: '700' }}>
+            <Typography variant="body1" sx={{ fontWeight: '600' }}>
               {props.amount}
               {'\u20AC'}
             </Typography>
           </Box>
           <Box display="flex" flexDirection="column" alignItems="flex-end">
-            <Typography variant="h6" sx={{ fontWeight: '700' }}>
+            <Typography variant="h6" sx={{ fontWeight: '600' }}>
               Total: {props.amount}
               {'\u20AC'}
             </Typography>
@@ -107,7 +108,7 @@ const InvoiceDetails = (props) => {
                 borderRadius: '2em',
                 backgroundColor: '#04819E',
                 color: '#fff',
-                fontWeight: '700',
+                fontWeight: '600',
               }}
             >
               GO TO PAYMENT

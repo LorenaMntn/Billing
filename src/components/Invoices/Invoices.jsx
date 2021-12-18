@@ -17,6 +17,7 @@ const Invoices = ({ data }) => {
     <Box
       sx={{
         position: {
+          xs: 'inherit',
           lg: 'fixed',
         },
         height: '100%',
@@ -25,49 +26,32 @@ const Invoices = ({ data }) => {
         color: '#000',
       }}
     >
-      <Stack sx={{ maxWidth: '1240px', m: '0 auto' }}>
-        <Container
-          sx={{
-            height: '20%',
-            m: {
-              xs: '0 auto',
-            },
-          }}
-        >
-          <Typography
-            variant="subtitle1"
-            sx={{
-              m: '.5rem auto 0',
-              height: '2.5em',
-              fontWeight: '700',
-              maxWidth: '70%',
-            }}
-          >
-            My Invoices
-          </Typography>
-        </Container>
-
+      <Stack sx={{ maxWidth: '1240px' }}>
         {data.length === 0 ? (
-          <Container
-            sx={{
-              height: '20%',
-              m: {
-                xs: '0 auto',
-              },
-            }}
-          >
+          <Box>
             <Typography
               variant="subtitle1"
               sx={{
                 m: '.5rem auto 0',
-                height: '3.1em',
-                fontWeight: '700',
+                height: '3em',
+                fontWeight: '600',
                 maxWidth: '70%',
               }}
             >
-              There are no invoice available
+              My Invoices
             </Typography>
-          </Container>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                m: '0 auto ',
+                height: '3.1em',
+                fontWeight: '300',
+                maxWidth: '70%',
+              }}
+            >
+              There are no invoice available!
+            </Typography>
+          </Box>
         ) : (
           <Container
             disableGutters
@@ -88,9 +72,21 @@ const Invoices = ({ data }) => {
                   sx: 'none',
                   lg: 'scroll',
                 },
-                p: '.4em',
+                m: '0 auto',
+                p: '.3em',
               }}
             >
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  m: '.5rem 0 .5em',
+                  height: '3em',
+                  fontWeight: '700',
+                  maxWidth: '70%',
+                }}
+              >
+                My Invoices
+              </Typography>
               {data.map((number) => (
                 <Box
                   onClick={() => {

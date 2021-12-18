@@ -19,8 +19,11 @@ const Details = (props) => {
     <Box
       sx={{
         display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         maxWidth: '100vw',
         minHeight: '100vh',
+        m: '0 auto',
       }}
     >
       <CssBaseline />

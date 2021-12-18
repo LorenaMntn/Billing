@@ -18,10 +18,10 @@ const AccountBalance = (props) => {
 
   const calculateDate = () => {
     return props.data.filter((element) => {
-      return element.status.includes('ISSUED') ? element : '';
-    })[0].due;
+      return element.status.includes('OVERDUE') ? element : '';
+    })[0];
   };
-  const getInvoice = calculateDate().split('/');
+  const getInvoice = calculateDate().due.split('/');
   const newNextInvoice =
     getInvoice[0] + '/' + (Number(getInvoice[1]) + 1) + '/' + getInvoice[2];
 
@@ -30,10 +30,10 @@ const AccountBalance = (props) => {
       sx={{
         m: {
           xs: '0 auto',
-          md: '0 0 0 5em',
-          lg: '0 0 0 2em',
+          md: '0 0 0 9em',
+          lg: '0 0 0 6em',
         },
-        maxWidth: '70%',
+        maxWidth: '55%',
         maxHeight: '20%',
         textAlign: 'center',
       }}
@@ -66,7 +66,7 @@ const AccountBalance = (props) => {
             },
             margin: '0 auto',
             mt: '0',
-            pt: '2em',
+            pt: '1em',
             width: '14em',
             wordWrap: 'break-word',
             textAlign: 'center',
@@ -111,7 +111,7 @@ const AccountBalance = (props) => {
             Due on {getInvoice.join('/')}
           </Typography>
           <Typography sx={{ fontWeight: '600' }}>
-            63.99
+            {calculateDate().amount}
             {'\u20AC'}
           </Typography>
         </Box>

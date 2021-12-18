@@ -27,7 +27,7 @@ const month = [
 const InvoiceCard = (props) => {
   const newDate = props.due.split('/');
   const getMonth = month[newDate[1] - 1];
-  
+
   return (
     <Paper
       sx={{
@@ -46,7 +46,7 @@ const InvoiceCard = (props) => {
           <Typography variant="subtitle1" sx={{ opacity: '0.4' }}>
             Invoice {props.id}
           </Typography>
-          <Typography gutterBottom variant="h6" sx={{ fontWeight: '700' }}>
+          <Typography gutterBottom variant="h6" sx={{ fontWeight: '600' }}>
             {getMonth}
           </Typography>
           <Typography variant="subtitle1" sx={{ opacity: '0.7' }}>
@@ -76,7 +76,7 @@ const InvoiceCard = (props) => {
             {props.status}
           </Typography>
           <Box textAlign="right" sx={{ mr: '.5em' }}>
-            <Typography variant="h5" sx={{ fontWeight: '700' }}>
+            <Typography variant="h5" sx={{ fontWeight: '600' }}>
               {props.amount}
               {'\u20AC'}
             </Typography>
