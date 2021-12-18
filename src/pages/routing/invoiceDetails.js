@@ -21,7 +21,7 @@ const Details = (props) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        maxWidth: '100vw',
+        maxWidth: '600px',
         minHeight: '100vh',
         m: '0 auto',
       }}
@@ -35,7 +35,7 @@ const Details = (props) => {
           sx={{ p: '.5em' }}
         >
           <ArrowBack onClick={() => router.back()} />
-          <Typography variant="h5" sx={{ fontWeight: '700', ml: '.75em' }}>
+          <Typography variant="h5" sx={{ fontWeight: '600', ml: '.75em' }}>
             October
           </Typography>
         </Box>
@@ -70,10 +70,10 @@ const Details = (props) => {
             gutterBottom
             sx={{ m: '1em 1em 0' }}
           >
-            <Typography gutterBottom variant="body1" sx={{ fontWeight: '700' }}>
+            <Typography gutterBottom variant="body1" sx={{ fontWeight: '600' }}>
               Plan details
             </Typography>
-            <Typography variant="body1" sx={{ fontWeight: '700' }}>
+            <Typography variant="body1" sx={{ fontWeight: '600' }}>
               Amount
             </Typography>
           </Box>
@@ -105,10 +105,10 @@ const Details = (props) => {
             justifyContent="space-between"
             sx={{ m: '0 1.3em' }}
           >
-            <Typography variant="body1" sx={{ fontWeight: '700' }}>
+            <Typography variant="body1" sx={{ fontWeight: '600' }}>
               Sub Total
             </Typography>
-            <Typography variant="body1" sx={{ fontWeight: '700' }}>
+            <Typography variant="body1" sx={{ fontWeight: '600' }}>
               {invoice.amount} {'\u20AC'}
             </Typography>
           </Box>
@@ -138,7 +138,7 @@ const Details = (props) => {
           boxShadow: '0px -1px 3px rgba(50, 50, 50, 0.2)',
         }}
       >
-        <Typography variant="h6" sx={{ fontWeight: '700' }}>
+        <Typography variant="h6" sx={{ fontWeight: '600' }}>
           Total: {invoice.amount}
           {'\u20AC'}
         </Typography>
@@ -151,7 +151,7 @@ const Details = (props) => {
             borderRadius: '2em',
             backgroundColor: '#04819E',
             color: '#fff',
-            fontWeight: '700',
+            fontWeight: '600',
           }}
         >
           GO TO PAYMENT

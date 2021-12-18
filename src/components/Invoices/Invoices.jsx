@@ -32,7 +32,7 @@ const Invoices = ({ data }) => {
             <Typography
               variant="subtitle1"
               sx={{
-                m: '.5rem auto 0',
+                m: '.5rem auto .3em',
                 height: '3em',
                 fontWeight: '600',
                 maxWidth: '70%',

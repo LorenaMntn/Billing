@@ -26,11 +26,7 @@ const App = () => {
         }}
       >
         <Header data={state} />
-        <Invoices
-          height="240px"
-          data={state}
-          sx={{ backgroundColor: 'blue' }}
-        />
+        <Invoices data={state} />
       </Grid>
       <Grid item md={12}>
         <Footer />
