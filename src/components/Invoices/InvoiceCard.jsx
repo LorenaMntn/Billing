@@ -27,6 +27,7 @@ const month = [
 const InvoiceCard = (props) => {
   const newDate = props.due.split('/');
   const getMonth = month[newDate[1] - 1];
+  
   return (
     <Paper
       sx={{

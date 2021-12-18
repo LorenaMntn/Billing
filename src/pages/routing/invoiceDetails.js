@@ -16,7 +16,13 @@ const Details = (props) => {
     (element) => element.id === Number(router.query.id)
   )[0];
   return (
-    <Box sx={{ maxWidth: '600px', maxHeight: '100%', m: '0 auto' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        maxWidth: '100vw',
+        minHeight: '100vh',
+      }}
+    >
       <CssBaseline />
       <Box sx={{ maxHeight: '70%' }}>
         <Box
@@ -100,10 +106,10 @@ const Details = (props) => {
               Sub Total
             </Typography>
             <Typography variant="body1" sx={{ fontWeight: '700' }}>
-              {invoice.amount}
+              {invoice.amount} {'\u20AC'}
             </Typography>
           </Box>
-          <Box sx={{ m: '0 2em' }}>
+          <Box sx={{ m: '0 1.5em' }}>
             <Button
               variant="outlined"
               fullWidth
@@ -117,31 +123,36 @@ const Details = (props) => {
               VIEW INVOICE AS PDF
             </Button>
           </Box>
-          {/* <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-end"
-            sx={{ m: '80% 1.3em 0 0' }}
-          >
-            <Typography variant="h6" sx={{ fontWeight: '700' }}>
-              Total: {invoice.amount} {'\u20AC'}
-            </Typography>
-            <Button
-              variant="contained"
-              component="span"
-              endIcon={<ArrowForwardIos />}
-              sx={{
-                mt: '.5em',
-                borderRadius: '2em',
-                backgroundColor: '#04819E',
-                color: '#fff',
-                fontWeight: '700',
-              }}
-            >
-              GO TO PAYMENT
-            </Button>
-          </Box> */}
         </Box>
+      </Box>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="flex-end"
+        sx={{
+          backgroundColor: '#F2F5F8',
+          p: '1em .5em',
+          boxShadow: '0px -1px 3px rgba(50, 50, 50, 0.2)',
+        }}
+      >
+        <Typography variant="h6" sx={{ fontWeight: '700' }}>
+          Total: {invoice.amount}
+          {'\u20AC'}
+        </Typography>
+        <Button
+          variant="contained"
+          component="span"
+          endIcon={<ArrowForwardIos />}
+          sx={{
+            mt: '.5em',
+            borderRadius: '2em',
+            backgroundColor: '#04819E',
+            color: '#fff',
+            fontWeight: '700',
+          }}
+        >
+          GO TO PAYMENT
+        </Button>
       </Box>
     </Box>
   );

@@ -15,11 +15,8 @@ const Invoices = ({ data }) => {
 
   return (
     <Box
-      item
-      container
       sx={{
         position: {
-          xs: 'inherit',
           lg: 'fixed',
         },
         height: '100%',
@@ -28,7 +25,7 @@ const Invoices = ({ data }) => {
         color: '#000',
       }}
     >
-      <Stack sx={{ maxWidth: '1240px' }}>
+      <Stack sx={{ maxWidth: '1240px', m: '0 auto' }}>
         <Container
           sx={{
             height: '20%',
@@ -41,7 +38,7 @@ const Invoices = ({ data }) => {
             variant="subtitle1"
             sx={{
               m: '.5rem auto 0',
-              height: '3.1em',
+              height: '2.5em',
               fontWeight: '700',
               maxWidth: '70%',
             }}
@@ -91,8 +88,7 @@ const Invoices = ({ data }) => {
                   sx: 'none',
                   lg: 'scroll',
                 },
-                m: '0 auto',
-                p: '.3em',
+                p: '.4em',
               }}
             >
               {data.map((number) => (

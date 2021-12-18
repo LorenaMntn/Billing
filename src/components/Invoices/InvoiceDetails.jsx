@@ -7,7 +7,7 @@ const InvoiceDetails = (props) => {
   return (
     <Grid
       sx={{
-        minWidth: '20em',
+        minWidth: '20rem',
         position: 'sticky',
       }}
     >
@@ -15,7 +15,7 @@ const InvoiceDetails = (props) => {
         sx={{
           p: '1em',
           maxWidth: '20em',
-          minHeight: '24em',
+          minHeight: '23em',
         }}
       >
         <Typography
