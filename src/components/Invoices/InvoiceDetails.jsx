@@ -1,6 +1,6 @@
 import { Grid, Button, Paper, Box, Typography, Divider } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Close } from '@mui/icons-material';
+import { Close, ArrowForwardIos } from '@mui/icons-material';
 import { useState } from 'react';
 
 const InvoiceDetails = (props) => {
@@ -15,7 +15,7 @@ const InvoiceDetails = (props) => {
         sx={{
           p: '1em',
           maxWidth: '20em',
-          minHeight: '21em',
+          minHeight: '24em',
         }}
       >
         <Typography
@@ -46,10 +46,10 @@ const InvoiceDetails = (props) => {
           <Box textAlign="right">
             <Typography variant="caption" sx={{ opacity: '0.7' }}>
               {props.status === 'OVERDUE'
-              ? `Was due on`
-              : props.status === 'PAID'
-              ? `Paid on`
-              : `Due on`}{' '}
+                ? `Was due on`
+                : props.status === 'PAID'
+                ? `Paid on`
+                : `Due on`}{' '}
             </Typography>
             <Typography variant="body1" sx={{ color: '#32424e' }}>
               {props.due}
@@ -80,7 +80,11 @@ const InvoiceDetails = (props) => {
             </Typography>
           </Box>
           <Divider sx={{ m: '.5em 0' }} />
-          <Box display="flex" justifyContent="space-between">
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            sx={{ mb: '1.5em' }}
+          >
             <Typography variant="body1" sx={{ fontWeight: '700' }}>
               Sub Total
             </Typography>
@@ -88,6 +92,26 @@ const InvoiceDetails = (props) => {
               {props.amount}
               {'\u20AC'}
             </Typography>
+          </Box>
+          <Box display="flex" flexDirection="column" alignItems="flex-end">
+            <Typography variant="h6" sx={{ fontWeight: '700' }}>
+              Total: {props.amount}
+              {'\u20AC'}
+            </Typography>
+            <Button
+              variant="contained"
+              component="span"
+              endIcon={<ArrowForwardIos />}
+              sx={{
+                mt: '.5em',
+                borderRadius: '2em',
+                backgroundColor: '#04819E',
+                color: '#fff',
+                fontWeight: '700',
+              }}
+            >
+              GO TO PAYMENT
+            </Button>
           </Box>
         </Box>
       </Paper>

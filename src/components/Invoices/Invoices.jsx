@@ -20,7 +20,7 @@ const Invoices = ({ data }) => {
       sx={{
         position: {
           xs: 'inherit',
-          md: 'fixed',
+          lg: 'fixed',
         },
         height: '100%',
         minWidth: '100vw',

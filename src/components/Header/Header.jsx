@@ -18,15 +18,14 @@ const Header = ({ data }) => {
         display="flex"
         alignItems="center"
         sx={{
-          
           zIndex: '100',
           position: 'fixed',
-          pb: '2.75em',
+          p: '1.35em 0',
           width: '100vw',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
       >
-        {mobileVersion ? <ArrowBack /> : ''}
+        {mobileVersion ? <ArrowBack sx={{ ml: '.2em' }} /> : ''}
         <Typography
           sx={{
             textAlign: 'center',
@@ -37,12 +36,16 @@ const Header = ({ data }) => {
         >
           Billing
         </Typography>
-        {mobileVersion ? <ContactSupport sx={{ marginLeft: 'auto' }} /> : ''}
+        {mobileVersion ? (
+          <ContactSupport sx={{ ml: 'auto', mr: '.2em' }} />
+        ) : (
+          ''
+        )}
       </Box>
       <Box
         sx={{
           width: '100vw',
-          p: '5.35em 0 3em',
+          p: '5.35em 0 2.1em',
           background: 'linear-gradient(90deg, #26A1B7 0%, #0372AE 100%)',
         }}
       >

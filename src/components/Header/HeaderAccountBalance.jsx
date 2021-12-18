@@ -34,6 +34,7 @@ const AccountBalance = (props) => {
           lg: '0 0 0 2em',
         },
         maxWidth: '70%',
+        maxHeight: '20%',
         textAlign: 'center',
       }}
       direction={{ xs: 'column', md: 'row' }}
@@ -43,7 +44,15 @@ const AccountBalance = (props) => {
           <Typography variant="body1" sx={{ fontWeight: '700' }}>
             Account Balance
           </Typography>
-          <Typography variant="h3" bottom>
+          <Typography
+            variant="h3"
+            bottom
+            sx={{
+              m: {
+                xs: '0 0 .3em',
+              },
+            }}
+          >
             {filterAccountBalance()}
             {'\u20AC'}
           </Typography>
@@ -70,7 +79,7 @@ const AccountBalance = (props) => {
         disableGutters={true}
         sx={{
           width: '100%',
-          height: '9.2em',
+          height: '10em',
           display: 'flex',
           background: 'rgba(204, 204, 204, 0.3)',
         }}
@@ -114,11 +123,11 @@ const AccountBalance = (props) => {
             xs: 'block',
             md: 'none',
           },
-          pb: '2em',
           textAlign: 'center',
+          m: '1em 0 0',
         }}
       >
-        Next invoice will be issued on
+        Next invoice will be issued on {newNextInvoice}
       </Typography>
     </Stack>
   );
