@@ -31,9 +31,10 @@ const AccountBalance = (props) => {
         m: {
           xs: '0 auto',
           md: '0 0 0 9em',
-          lg: '0 0 0 6em',
+          lg: '0 0 0 3em',
         },
-        maxWidth: '55%',
+        overflowX: 'hidden',
+        maxWidth: '62%',
         maxHeight: '20%',
         textAlign: 'center',
       }}

@@ -1,9 +1,14 @@
 import { Grid, Button, Paper, Box, Typography, Divider } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import { Close, ArrowForwardIos } from '@mui/icons-material';
-import { useState } from 'react';
+import {
+  Close,
+  ArrowForwardIos,
+  ConstructionOutlined,
+} from '@mui/icons-material';
 
 const InvoiceDetails = (props) => {
+  const newDate = props.due.split('/');
+  const newNextInvoice =
+    newDate[0] + '/' + (Number(newDate[1]) + 1) + '/' + newDate[2];
   return (
     <Grid
       sx={{
@@ -72,7 +77,7 @@ const InvoiceDetails = (props) => {
           </Typography>
           <Box gutterBottom display="flex" justifyContent="space-between">
             <Typography gutterBottom variant="body2" sx={{ opacity: '0.7' }}>
-              21/09/2021 - 21/10/2020
+              {props.due} - {newNextInvoice}
             </Typography>
             <Typography variant="body1">
               {' '}

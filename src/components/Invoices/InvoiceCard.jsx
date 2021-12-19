@@ -66,7 +66,6 @@ const InvoiceCard = (props) => {
               width: '75px',
               m: '.5em 0 .5em auto',
               borderRadius: '1em 0 0 1em',
-              // position: 'absolute',
               backgroundColor: statusColor[props.status],
               color: '#fff',
               textAlign: 'center',

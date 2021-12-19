@@ -72,7 +72,7 @@ const Invoices = ({ data }) => {
                   sx: 'none',
                   lg: 'scroll',
                 },
-                m: '0 auto',
+                m: '0 auto 20em',
                 p: '.3em',
               }}
             >
