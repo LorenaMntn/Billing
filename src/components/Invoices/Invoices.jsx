@@ -93,7 +93,7 @@ const Invoices = ({ data }) => {
                     if (isDesktop) {
                       setSelectedInvoice(number);
                     } else {
-                      router.push(`/routing/invoiceDetails/?id=${number.id}`);
+                      router.push(`/invoices/invoiceDetails/?id=${number.id}`);
                     }
                   }}
                   key={number.id}

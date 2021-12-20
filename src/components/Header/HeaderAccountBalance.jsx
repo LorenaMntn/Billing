@@ -18,7 +18,7 @@ const AccountBalance = (props) => {
 
   const calculateDate = () => {
     return props.data.filter((element) => {
-      return element.status.includes('OVERDUE') ? element : '';
+      return element.status.includes('ISSUED') ? element : '';
     })[0];
   };
   const getInvoice = calculateDate().due.split('/');
