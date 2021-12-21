@@ -1,9 +1,10 @@
 import App from '../components/App';
+import { Box } from '@mui/material';
 
 const Index = () => (
-  <div>
+  <Box>
     <App />
-  </div>
+  </Box>
 );
 
 export default Index;
